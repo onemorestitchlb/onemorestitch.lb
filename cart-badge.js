@@ -25,6 +25,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  const showNotification = (message) => {
+    const notification = document.createElement("div");
+    notification.className = "cart-notification";
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    // Trigger animation
+    setTimeout(() => notification.classList.add("show"), 10);
+
+    // Remove after 2 seconds
+    setTimeout(() => {
+      notification.classList.remove("show");
+      setTimeout(() => notification.remove(), 300);
+    }, 2000);
+  };
+
   const addToCart = (title, price) => {
     const cart = loadCart();
     const existing = cart.find((item) => item.title === title);
@@ -34,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cart.push({ title, price, quantity: 1 });
     }
     saveCart(cart);
+    showNotification(`${title} added to cart`);
   };
 
   // Add to Cart button handlers in modals

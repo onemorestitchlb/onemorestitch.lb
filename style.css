@@ -440,6 +440,7 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 0 0 auto;
 }
 
 .cart-control-btn:last-child {
@@ -456,8 +457,30 @@ h1{
     cursor: not-allowed;
 }
 
+.cart-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px 30px;
+    font-size: 18px;
+    text-align: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.cart-notification.show {
+    opacity: 1;
+}
+
 .cart-quantity-input {
     border: none;
+    border-right: 1px solid black;
     background: white;
     text-align: center;
     width: 40px;

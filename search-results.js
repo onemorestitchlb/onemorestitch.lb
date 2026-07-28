@@ -68,16 +68,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const normalizedSearch = normalize(searchTerm);
+  
+  // Word boundary aware search
   const matches = ALL_PRODUCTS.filter((product) => {
     const title = normalize(product.title);
     const description = normalize(product.description);
-    return title.includes(normalizedSearch) || description.includes(normalizedSearch);
+    
+    // Check if title equals search term or contains it as a word
+    const titleMatch = title === normalizedSearch || 
+                       new RegExp(`\\b${normalizedSearch}\\b`).test(title);
+    
+    // Check if description contains the search term as a word
+    const descriptionMatch = new RegExp(`\\b${normalizedSearch}\\b`).test(description);
+    
+    return titleMatch || descriptionMatch;
   });
 
   resultTitle.textContent = `Search Results for "${searchTerm}"`;
 
   if (matches.length === 0) {
-    noResultsMessage.innerHTML = `<h2>No results for "${searchTerm}"!</h2>`;
+    noResultsMessage.innerHTML = `<h2>No results for \"${searchTerm}\"!</h2>`;
     noResultsMessage.classList.remove("hidden");
     resultsGrid.innerHTML = "";
     return;

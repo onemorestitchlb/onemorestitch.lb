@@ -13,10 +13,27 @@ document.addEventListener("DOMContentLoaded", () => {
     updateGlobalBadge();
   };
 
+  const showNotification = (message) => {
+    const notification = document.createElement("div");
+    notification.className = "cart-notification";
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    // Trigger animation
+    setTimeout(() => notification.classList.add("show"), 10);
+
+    // Remove after 2 seconds
+    setTimeout(() => {
+      notification.classList.remove("show");
+      setTimeout(() => notification.remove(), 300);
+    }, 2000);
+  };
+
   const removeItem = (title) => {
     let cart = loadCart();
     cart = cart.filter((item) => item.title !== title);
     saveCart(cart);
+    showNotification(`${title} removed from cart`);
   };
 
   const updateQuantity = (title, newQuantity) => {
