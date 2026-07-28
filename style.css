@@ -167,6 +167,36 @@ body.modal-open {
     display: none;
 }
 
+.no-results-message {
+    text-align: center;
+    padding: 40px 20px;
+    margin: 20px 0;
+}
+
+.no-results-message.hidden {
+    display: none;
+}
+
+.no-results-message h2 {
+    font-size: 24px;
+    color: #666;
+    margin: 0;
+}
+
+.results-container {
+    min-height: 200px;
+    margin: 40px 0;
+}
+
+
+.search-hint.hidden {
+    display: none;
+}
+
+.search-input:focus ~ .search-hint {
+    display: none;
+}
+
 
 /* This controls the whole box holding everything */
 
