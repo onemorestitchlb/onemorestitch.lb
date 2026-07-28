@@ -2,8 +2,8 @@
 
 body{
 
-    font-family: 'Anton', sans-serif;
-
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 400;
     /* Removes the browser's default spacing */
 
     margin:0;
