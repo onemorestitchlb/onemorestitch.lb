@@ -36,7 +36,7 @@
 
 
             <!-- Product image -->
-            <div class="image-container">
+            <div class="image-container" tabindex="0" role="button" aria-label="View details for Crochet Keychain" data-image="images/keychain1.jpg" data-title="Crochet Keychain" data-price="10,000 LBP" data-description="This is a keychain item. Write your description here.">
                 <img src="images/keychain1.jpg" alt="Crochet Keychain">
                 <div class="overlay">View Details</div>
             </div>
@@ -60,7 +60,7 @@
         <div class="product-card">
 
 
-            <div class="image-container">
+            <div class="image-container" tabindex="0" role="button" aria-label="View details for Mini Keychain" data-image="images/keychain2.jpg" data-title="Mini Keychain" data-price="15,000 LBP" data-description="This is a keychain item. Write your description here.">
                 <img src="images/keychain2.jpg" alt="Crochet Keychain">
                 <div class="overlay">View Details</div>
             </div>
@@ -88,9 +88,22 @@
 
 </div>
 
-
+<div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <img class="detail-image" src="" alt="">
+        <h2 class="detail-name"></h2>
+        <p class="detail-price"></p>
+        <h3>Description</h3>
+        <!-- This is the place to write your description. -->
+        <p class="detail-description"></p>
+        <button id="inquireButton" class="inquire-button">Inquire</button>
+        <a id="instagramButton" class="instagram-button hidden" href="https://www.instagram.com/onemorestitch.lb?igsh=cTN5Mm93dzJjZDBz&utm_source=qr" target="_blank" rel="noopener noreferrer">Contact on Instagram</a>
+    </div>
+</div>
 
 </body>
 
+<script src="product-modal.js"></script>
 
 </html>
