@@ -10,8 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const detailName = modal.querySelector(".detail-name");
   const detailPrice = modal.querySelector(".detail-price");
   const detailDescription = modal.querySelector(".detail-description");
+  const buttonRow = modal.querySelector(".modal-actions");
   const inquireButton = document.getElementById("inquireButton");
   const instagramButton = document.getElementById("instagramButton");
+  const addToCartButton = document.getElementById("addToCartButton");
 
   const openModal = (card) => {
     detailImage.src = card.dataset.image;
@@ -19,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     detailName.textContent = card.dataset.title;
     detailPrice.textContent = card.dataset.price;
     detailDescription.textContent = card.dataset.description || "Write your description here.";
+    inquireButton.classList.remove("hidden");
+    addToCartButton.classList.remove("hidden");
     instagramButton.classList.add("hidden");
     modal.classList.add("active");
     modal.setAttribute("aria-hidden", "false");
@@ -51,8 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  if (inquireButton) {
+  if (inquireButton && instagramButton && addToCartButton) {
     inquireButton.addEventListener("click", () => {
+      inquireButton.classList.add("hidden");
+      addToCartButton.classList.add("hidden");
       instagramButton.classList.remove("hidden");
     });
   }
