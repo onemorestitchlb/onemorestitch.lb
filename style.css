@@ -1,0 +1,91 @@
+/* Makes the whole page use this font */
+
+body{
+
+    font-family: Arial, sans-serif;
+
+    /* Removes the browser's default spacing */
+
+    margin:0;
+
+    /* Centers everything horizontally */
+
+    display:flex;
+
+    justify-content:center;
+
+    /* Centers vertically */
+
+    align-items:center;
+
+    /* Makes the page take up the whole screen */
+
+    height:100vh;
+
+    background:white;
+
+}
+
+
+/* This controls the whole box holding everything */
+
+.container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+/* The title */
+
+h1{
+
+    text-align:center;
+
+    font-size:56px;
+
+    margin-bottom:60px;
+
+}
+
+
+/* Every button */
+
+.button{
+
+    width:300px;
+
+    padding:20px;
+
+    margin:15px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:black;
+
+    border:2px solid black;
+
+    border-radius:20px;
+
+    font-size:28px;
+
+    transition:0.3s;
+
+}
+
+
+/* What happens when the mouse hovers */
+
+.button:hover{
+
+    background:black;
+
+    color:white;
+
+}
