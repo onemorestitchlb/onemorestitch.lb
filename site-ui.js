@@ -52,6 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
     searchBox.classList.toggle("active");
     if (searchBox.classList.contains("active")) {
       searchInput.focus();
+      if (!searchInput.value.trim()) {
+        searchHint.classList.remove("hidden");
+      }
     } else {
       searchInput.value = "";
       searchHint.classList.remove("hidden");
@@ -70,8 +73,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   searchInput.addEventListener("focus", () => {
-    if (searchInput.value.trim()) {
-      searchHint.classList.add("hidden");
+    if (!searchInput.value.trim()) {
+      searchHint.classList.remove("hidden");
+    }
+  });
+
+  searchInput.addEventListener("blur", () => {
+    if (!searchInput.value.trim()) {
+      searchHint.classList.remove("hidden");
     }
   });
 

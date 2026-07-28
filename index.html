@@ -24,12 +24,15 @@
 
     <div class="site-header">
         <div class="search-box" id="searchBox">
-            <input type="text" class="search-input" id="searchInput" placeholder="" aria-label="Search products">
+            <input type="text" class="search-input" id="searchInput" placeholder="What are you looking for?" aria-label="Search products">
             <span class="search-hint" id="searchHint">What are you looking for?</span>
             <div class="search-results" id="searchResults"></div>
         </div>
-        <button class="search-toggle" id="searchToggle" type="button">🔍</button>
-        <a href="#" class="cart-button" aria-label="Cart">🛒</a>
+        <button class="search-toggle" id="searchToggle" type="button"><img src="images/search.svg" alt="Search"></button>
+        <a href="cart.html" class="cart-button" id="cartButton" aria-label="Cart">
+            <img src="images/cart.svg" alt="Cart">
+            <span class="cart-badge hidden" id="cartBadge">0</span>
+        </a>
     </div>
 
     <!-- Main container -->
@@ -51,7 +54,7 @@
             Earrings
         </a>
 
-        <a href="customorder.html" class="button">
+        <a href="custom.html" class="button">
             Custom Order
         </a>
 
@@ -60,5 +63,6 @@
 </body>
 
 <script src="site-ui.js"></script>
+<script src="cart-badge.js"></script>
 
 </html>
