@@ -4,14 +4,14 @@ const ALL_PRODUCTS = [
     title: "Hey",
     price: "25,000 LBP",
     image: "hey.jpg",
-    description: "This is a plushie item. Write your description here.",
+    description: "This is a plushie item. Greetings.",
     category: "plushies"
   },
   {
     title: "Hi",
     price: "30,000 LBP",
     image: "hi.jpg",
-    description: "This is a plushie item. Write your description here.",
+    description: "This is a plushie item. Greetings.",
     category: "plushies"
   },
   {
