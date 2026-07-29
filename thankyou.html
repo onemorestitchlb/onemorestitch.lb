@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thank You</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Thank you for your order!</h1>
+
+<div id="orderSummary"></div>
+
+</div>
+
+
+<script>
+
+const order = JSON.parse(localStorage.getItem("lastOrder"));
+
+const summary = document.getElementById("orderSummary");
+
+if(order){
+
+summary.innerHTML = `
+
+<h2>Order Summary</h2>
+
+<p><strong>Name:</strong> ${order.name}</p>
+
+<p><strong>City:</strong> ${order.city}</p>
+
+<p><strong>Address:</strong> ${order.address}</p>
+
+<p><strong>Phone:</strong> ${order.phone}</p>
+
+
+<h3>Items:</h3>
+
+${order.items.map(item => 
+`<p>${item.quantity}x ${item.title}</p>`
+).join("")}
+
+
+<h3>Total: $${order.total}</h3>
+
+`;
+
+}
+
+</script>
+
+
+</body>
+</html>

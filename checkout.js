@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkoutItems = document.getElementById("checkoutItems");
   const deliveryTotal = document.getElementById("deliveryTotal");
   const checkoutForm = document.getElementById("checkoutForm");
-  const thankYouModal = document.getElementById("thankYouModal");
-  const thankYouSummary = document.getElementById("thankYouSummary");
   const confirmButton = checkoutForm ? checkoutForm.querySelector(".checkout-button") : null;
   const nameInput = document.getElementById("nameInput");
   const cityInput = document.getElementById("cityInput");
@@ -58,40 +56,29 @@ document.addEventListener("DOMContentLoaded", () => {
     return lines.join("");
   };
 
-const sendOrderEmail = async (summaryText) => {
-  const payload = new URLSearchParams({
-    name: "New order",
-    email: "rahykay@gmail.com",
-    message: summaryText,
-    _subject: "New order from onemorestitch.lb",
-    _captcha: "false",
-  });
+const sendOrderEmail = (summaryText) => {
+  const form = document.createElement("form");
 
-  try {
-    const response = await fetch("https://formsubmit.co/ajax/e8d98f8a146e093a04227129dc8769cf", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        Accept: "application/json",
-      },
-      body: payload.toString(),
-    });
+  form.action = "https://formsubmit.co/e8d98f8a146e093a04227129dc8769cf";
+  form.method = "POST";
 
-    const result = await response.json();
+  const fields = {
+  _subject: "New order from onemorestitch.lb",
+  _captcha: "false",
+  _next: "https://onemorestitchlb.github.io/onemorestitch.lb/thankyou.html",
+  message: summaryText
+};
 
-    alert(JSON.stringify(result));   // <-- Add this
-
-    if (!response.ok || result.success === false) {
-      throw new Error(result.message || "Email failed.");
-    }
-
-    return true;
-
-  } catch (error) {
-    console.error(error);
-    alert("Email failed: " + error.message);
-    return false;
+  for (const key in fields) {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = key;
+    input.value = fields[key];
+    form.appendChild(input);
   }
+
+  document.body.appendChild(form);
+  form.submit();
 };
 
   const renderCheckout = () => {
@@ -156,7 +143,7 @@ const sendOrderEmail = async (summaryText) => {
       const city = cityInput ? cityInput.value.trim() : "";
       const address = addressInput ? addressInput.value.trim() : "";
       const phone = phoneInput ? phoneInput.value.trim() : "";
-
+    
       if (!name || !city || !address || !phone) {
         return;
       }
@@ -174,21 +161,18 @@ const sendOrderEmail = async (summaryText) => {
         ...cart.map((item) => `${item.quantity}x ${item.title}`),
         `Total: ${formatPrice(total)}`,
       ].join("\n");
+    
+    localStorage.setItem("lastOrder", JSON.stringify({
+        name,
+        city,
+        address,
+        phone,
+        items: cart,
+        total
+    }));
 
-      if (thankYouSummary) {
-        thankYouSummary.innerHTML = buildSummary(cart, name, city, address, phone, total);
-      }
+sendOrderEmail(summaryText);
 
-      const sent = await sendOrderEmail(summaryText);
-
-    if (!sent) {
-        return;
-    }
-
-    localStorage.removeItem("cart");
-    thankYouModal.classList.add("active");
-      thankYouModal.setAttribute("aria-hidden", "false");
-      document.body.classList.add("modal-open");
     });
   }
 
