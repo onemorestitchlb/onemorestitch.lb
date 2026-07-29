@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     detailImage.src = card.dataset.image;
     detailImage.alt = card.dataset.title;
     detailName.textContent = card.dataset.title;
-    detailPrice.textContent = card.dataset.price;
+    detailPrice.textContent = card.querySelector(".price")?.textContent?.trim() || card.dataset.price || "";
     detailDescription.textContent = card.dataset.description || "Write your description here.";
     inquireButton.classList.remove("hidden");
     addToCartButton.classList.remove("hidden");

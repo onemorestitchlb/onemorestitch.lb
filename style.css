@@ -216,11 +216,15 @@ h1{
 
 }
 
+.page-title-spacing {
+    margin-bottom: 60px;
+}
+
 
 /* Every button */
 
 .button{
-
+    cursor: pointer;
     width:min(300px, 100%);
 
     padding:16px 20px;
@@ -233,7 +237,7 @@ h1{
 
     color:#001630;
 
-    border:2px solid #B59410;
+    border:2px solid #caa614;
 
     border-radius:20px;
 
@@ -241,7 +245,7 @@ h1{
 
     transition:0.3s;
     box-sizing:border-box;
-    background:#B59410;
+    background:#caa614;
     box-shadow:0 6px 16px rgba(0,0,0,0.18);
 
 }
@@ -329,12 +333,12 @@ h1{
     display: inline-block;
     text-decoration: none;
     color: #001630;
-    border: 2px solid #B59410;
+    border: 2px solid #caa614;
     border-radius: 20px;
     padding: 12px 18px;
     margin: 8px 6px;
     font-size: 16px;
-    background: #B59410;
+    background: #caa614;
     cursor: pointer;
 }
 
@@ -544,8 +548,13 @@ cart.html .site-header {
     margin: 0;
 }
 
+.cart-actions .button.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}
+
 .secondary-button {
-    background: #B59410;
+    background: #caa614;
     color: #001630;
 }
 
@@ -616,7 +625,6 @@ cart.html .site-header {
     border: 2px solid #F8F6EF;
     border-radius: 12px;
     font-size: 16px;
-    font-family: inherit;
     background: #F8F6EF;
     color: #001630;
 }
@@ -643,24 +651,37 @@ cart.html .site-header {
 
 .checkout-button {
     cursor: pointer;
-    background:#F8F6EF;
-    color:#4f4f4f;
-    border-color:#8a8a8a;
+    background:#caa614;
+    color:#000000;
+    border-color:#caa614;
 }
 
 .checkout-button:not(:disabled) {
-    background:#B59410;
+    background:#caa614;
     color:#001630;
-    border-color:#B59410;
+    border-color:#caa614;
 }
 
 .checkout-button:disabled {
     cursor: not-allowed;
-    opacity:0.8;
+    opacity:0.65;
 }
 
 .thank-you-modal {
-    max-width: 420px;
+    max-width: 480px;
+}
+
+.thank-you-summary {
+    margin: 18px 0 8px;
+    padding: 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.08);
+    text-align: left;
+    line-height: 1.6;
+}
+
+.thank-you-summary p {
+    margin: 0 0 8px;
 }
 
 .keychain-option-picker {
@@ -718,7 +739,7 @@ cart.html .site-header {
 
 .add-to-cart-button:disabled,
 .add-to-cart-button.disabled {
-    opacity: 0.55;
+    opacity: 0.65;
     cursor: not-allowed;
 }
 
@@ -737,12 +758,13 @@ cart.html .site-header {
 }
 
 .product-card {
+    cursor: pointer;
     width: calc(25% - 24px);
     min-width: 220px;
     text-align: center;
     background: #F8F6EF;
     color:#001630;
-    border: 1px solid #B59410;
+    border: 1px solid #caa614;
     border-radius: 24px;
     padding: 16px 12px;
     box-shadow: 0 8px 18px rgba(0,0,0,0.16);

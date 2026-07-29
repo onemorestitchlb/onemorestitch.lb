@@ -40,14 +40,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2000);
   };
 
+  const normalizePrice = (priceText) => {
+    const text = String(priceText || "").trim();
+    const isLbp = text.toLowerCase().includes("lbp");
+    const cleaned = text.replace(/[^0-9,.-]/g, "").replace(/,/g, "");
+    const parsed = Number.parseFloat(cleaned);
+
+    if (Number.isNaN(parsed)) {
+      return text || "$0.00";
+    }
+
+    const normalizedValue = isLbp && parsed >= 1000 ? parsed / 1000 : parsed;
+    return `$${normalizedValue.toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })}`;
+  };
+
   const addToCart = (title, price, variation = "") => {
     const cart = loadCart();
     const itemTitle = variation ? `${title} (${variation})` : title;
+    const normalizedPrice = normalizePrice(price);
     const existing = cart.find((item) => item.title === itemTitle);
     if (existing) {
       existing.quantity += 1;
     } else {
-      cart.push({ title: itemTitle, price, quantity: 1, variation });
+      cart.push({ title: itemTitle, price: normalizedPrice, quantity: 1, variation });
     }
     saveCart(cart);
     showNotification(`${itemTitle} added to cart`);

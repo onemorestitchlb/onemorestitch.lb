@@ -17,6 +17,11 @@
 
     <form id="checkoutForm" class="checkout-form">
         <label class="checkout-field">
+            <span>Name:</span>
+            <input type="text" id="nameInput" name="name" required>
+        </label>
+
+        <label class="checkout-field">
             <span>City:</span>
             <input type="text" id="cityInput" name="city" required>
         </label>
@@ -43,6 +48,7 @@
 <div id="thankYouModal" class="modal" aria-hidden="true">
     <div class="modal-content thank-you-modal">
         <h2>Thank you for shopping with onemorestitch.lb!</h2>
+        <div id="thankYouSummary" class="thank-you-summary"></div>
         <div class="checkout-actions">
             <a href="index.html" class="button secondary-button">Continue Shopping</a>
         </div>

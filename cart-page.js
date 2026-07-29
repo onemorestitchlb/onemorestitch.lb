@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartItemsContainer = document.getElementById("cartItems");
   const emptyMessage = document.getElementById("emptyMessage");
   const cartSummary = document.getElementById("cartSummary");
+  const checkoutLink = document.querySelector('.cart-actions .button[href="checkout.html"]');
 
   const loadCart = () => {
     const stored = localStorage.getItem("cart");
@@ -29,12 +30,19 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const parsePrice = (priceText) => {
-    const cleaned = priceText.replace(/[^0-9,.-]/g, "").replace(/,/g, "");
+    const text = String(priceText || "").trim();
+    const isLbp = text.toLowerCase().includes("lbp");
+    const cleaned = text.replace(/[^0-9,.-]/g, "").replace(/,/g, "");
     const parsed = Number.parseFloat(cleaned);
-    return Number.isNaN(parsed) ? 0 : parsed;
+
+    if (Number.isNaN(parsed)) {
+      return 0;
+    }
+
+    return isLbp && parsed >= 1000 ? parsed / 1000 : parsed;
   };
 
-  const formatPrice = (value) => `${value.toLocaleString("en-US")} LBP`;
+  const formatPrice = (value) => `$${Number(value).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
   const removeItem = (title) => {
     let cart = loadCart();
@@ -70,13 +78,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  const updateCheckoutState = (cart) => {
+    if (checkoutLink) {
+      if (cart.length === 0) {
+        checkoutLink.classList.add("disabled");
+        checkoutLink.setAttribute("aria-disabled", "true");
+        checkoutLink.removeAttribute("href");
+      } else {
+        checkoutLink.classList.remove("disabled");
+        checkoutLink.setAttribute("aria-disabled", "false");
+        checkoutLink.setAttribute("href", "checkout.html");
+      }
+    }
+  };
+
   const renderCart = () => {
     const cart = loadCart();
     cartItemsContainer.innerHTML = "";
 
     if (cart.length === 0) {
       emptyMessage.classList.remove("hidden");
+      cartSummary.innerHTML = "";
       cartSummary.classList.add("hidden");
+      updateCheckoutState(cart);
       return;
     }
 
@@ -88,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const namePrice = document.createElement("div");
       namePrice.className = "cart-item-name-price";
-      namePrice.innerHTML = `<span class="cart-item-name">${item.title}</span><span class="cart-item-price">${item.price}</span>`;
+      namePrice.innerHTML = `<span class="cart-item-name">${item.title}</span><span class="cart-item-price">${formatPrice(parsePrice(item.price))}</span>`;
 
       const controls = document.createElement("div");
       controls.className = "cart-item-controls";
@@ -148,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const subtotal = cart.reduce((sum, item) => sum + parsePrice(item.price) * item.quantity, 0);
     cartSummary.innerHTML = `<div class="cart-summary-total">Total price: ${formatPrice(subtotal)}</div>`;
     cartSummary.classList.remove("hidden");
+    updateCheckoutState(cart);
   };
 
   renderCart();

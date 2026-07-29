@@ -2,42 +2,42 @@
 const ALL_PRODUCTS = [
   {
     title: "Hey",
-    price: "25,000 LBP",
+    price: "$25.00",
     image: "hey.jpg",
     description: "This is a plushie item. Greetings.",
     category: "plushies"
   },
   {
     title: "Hi",
-    price: "30,000 LBP",
+    price: "$30.00",
     image: "hi.jpg",
     description: "This is a plushie item. Greetings.",
     category: "plushies"
   },
   {
     title: "Crochet Keychain",
-    price: "10,000 LBP",
+    price: "$10.00",
     image: "images/keychain1.jpg",
     description: "This is a keychain item. Write your description here.",
     category: "keychains"
   },
   {
     title: "Mini Keychain",
-    price: "15,000 LBP",
+    price: "$15.00",
     image: "images/keychain2.jpg",
     description: "This is a keychain item. Write your description here.",
     category: "keychains"
   },
   {
     title: "Crochet Earrings",
-    price: "15,000 LBP",
+    price: "$15.00",
     image: "images/earrings1.jpg",
     description: "This is an earring item. Write your description here.",
     category: "earrings"
   },
   {
     title: "Flower Earrings",
-    price: "20,000 LBP",
+    price: "$20.00",
     image: "images/earrings2.jpg",
     description: "This is an earring item. Write your description here.",
     category: "earrings"
@@ -51,14 +51,14 @@ const ALL_PRODUCTS = [
   },
   {
     title: "Crochet Bag",
-    price: "45,000 LBP",
+    price: "$45.00",
     image: "images/bags1.svg",
     description: "A handmade bag made with care and texture.",
     category: "bags"
   },
   {
     title: "Mini Tote",
-    price: "50,000 LBP",
+    price: "$50.00",
     image: "images/bags2.svg",
     description: "A compact tote with a handmade finish and roomy shape.",
     category: "bags"
