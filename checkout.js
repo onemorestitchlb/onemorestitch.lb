@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return lines.join("");
   };
 
-  const sendOrderEmail = async (summaryText) => {
+const sendOrderEmail = async (summaryText) => {
   const payload = new URLSearchParams({
     name: "New order",
     email: "rahykay@gmail.com",
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   try {
-    const response = await fetch("https://formsubmit.co/ajax/rahykay@gmail.com", {
+    const response = await fetch("https://formsubmit.co/ajax/e8d98f8a146e093a04227129dc8769cf", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -79,11 +79,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const result = await response.json();
 
-    console.log("Status:", response.status);
-    console.log(result);
+    alert(JSON.stringify(result));   // <-- Add this
+
+    if (!response.ok || result.success === false) {
+      throw new Error(result.message || "Email failed.");
+    }
+
+    return true;
 
   } catch (error) {
     console.error(error);
+    alert("Email failed: " + error.message);
+    return false;
   }
 };
 
@@ -172,9 +179,14 @@ document.addEventListener("DOMContentLoaded", () => {
         thankYouSummary.innerHTML = buildSummary(cart, name, city, address, phone, total);
       }
 
-      await sendOrderEmail(summaryText);
-      localStorage.removeItem("cart");
-      thankYouModal.classList.add("active");
+      const sent = await sendOrderEmail(summaryText);
+
+    if (!sent) {
+        return;
+    }
+
+    localStorage.removeItem("cart");
+    thankYouModal.classList.add("active");
       thankYouModal.setAttribute("aria-hidden", "false");
       document.body.classList.add("modal-open");
     });
