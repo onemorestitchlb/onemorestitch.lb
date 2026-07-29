@@ -13,6 +13,20 @@ body{
 
 }
 
+button,
+input,
+textarea,
+select,
+a,
+.button,
+.inquire-button,
+.instagram-button,
+.add-to-cart-button,
+.cart-control-btn,
+.keychain-option {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
 body.modal-open {
     overflow: hidden;
 }
@@ -259,6 +273,28 @@ h1{
 
     color:#F8F6EF;
 
+}
+
+.button:disabled,
+.button.disabled,
+.add-to-cart-button:disabled,
+.add-to-cart-button.disabled,
+.checkout-button:disabled,
+.secondary-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+
+.button:disabled:hover,
+.button.disabled:hover,
+.add-to-cart-button:disabled:hover,
+.add-to-cart-button.disabled:hover,
+.checkout-button:disabled:hover,
+.secondary-button:disabled:hover {
+    background: #caa614;
+    color: #001630;
+    cursor: not-allowed;
 }
 
 .modal {
@@ -549,8 +585,15 @@ cart.html .site-header {
 }
 
 .cart-actions .button.disabled {
+    cursor: not-allowed;
     pointer-events: none;
     opacity: 0.65;
+}
+
+.cart-actions .button.disabled:hover {
+    background: #caa614;
+    color: #001630;
+    cursor: not-allowed;
 }
 
 .secondary-button {
@@ -658,13 +701,13 @@ cart.html .site-header {
 
 .checkout-button:not(:disabled) {
     background:#caa614;
-    color:#001630;
+    color:#000000;
     border-color:#caa614;
 }
 
-.checkout-button:disabled {
-    cursor: not-allowed;
-    opacity:0.65;
+.checkout-button:hover:not(:disabled) {
+    background:#000000;
+    color:#F8F6EF;
 }
 
 .thank-you-modal {
@@ -727,6 +770,7 @@ cart.html .site-header {
     cursor: pointer;
     font: inherit;
     color: black;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .keychain-option + .keychain-option {
@@ -734,7 +778,8 @@ cart.html .site-header {
 }
 
 .keychain-option:hover {
-    background: #F8F6EF;
+    background: #d9d9d9;
+    color: #001630;
 }
 
 .add-to-cart-button:disabled,
