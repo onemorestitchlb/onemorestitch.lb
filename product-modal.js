@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const display = keychainPicker.querySelector(".option-display");
     if (display) {
-      display.textContent = "Select..";
+      display.textContent = "Select below..";
     }
 
     if (addToCartButton) {

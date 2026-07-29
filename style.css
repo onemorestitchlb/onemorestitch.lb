@@ -8,7 +8,7 @@ body{
     font-weight: 400;
     margin:0;
     min-height:100vh;
-    background:#001B3A;
+    background:#001630;
     color:#F8F6EF;
 
 }
@@ -42,7 +42,7 @@ body.modal-open {
     padding: 10px 14px;
     border-radius: 999px;
     border: 2px solid black;
-    background: #f2f2f2;
+    background: #F8F6EF;
     color: #4d4d4d;
     font-size: 14px;
     outline: none;
@@ -55,7 +55,7 @@ body.modal-open {
 .search-toggle,
 .cart-button {
     border: 2px solid black;
-    background: white;
+    background: #F8F6EF;
     color: black;
     border-radius: 999px;
     padding: 8px 12px;
@@ -71,7 +71,7 @@ body.modal-open {
 .search-toggle:hover,
 .cart-button:hover {
     background: black;
-    color: white;
+    color: #F8F6EF;
 }
 
 .search-toggle img,
@@ -86,7 +86,7 @@ body.modal-open {
     top: -8px;
     right: -8px;
     background: black;
-    color: white;
+    color: #F8F6EF;
     border-radius: 50%;
     width: 22px;
     height: 22px;
@@ -107,7 +107,7 @@ body.modal-open {
     top: calc(100% + 8px);
     left: 0;
     width: 100%;
-    background: white;
+    background: #F8F6EF;
     border: 2px solid black;
     border-radius: 14px;
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
@@ -124,11 +124,11 @@ body.modal-open {
     padding: 10px 12px;
     color: black;
     text-decoration: none;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #F8F6EF;
 }
 
 .search-result-item:hover {
-    background: #f5f5f5;
+    background: #F8F6EF;
 }
 
 .search-result-item.no-result {
@@ -208,11 +208,10 @@ h1{
 
     text-align:center;
 
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
     font-size:clamp(32px, 5vw, 56px);
     font-weight:300;
     margin-bottom:40px;
-    color:#B59410;
+    color:#F8F6EF;
     letter-spacing:0.04em;
 
 }
@@ -232,7 +231,7 @@ h1{
 
     text-decoration:none;
 
-    color:#001B3A;
+    color:#001630;
 
     border:2px solid #B59410;
 
@@ -252,7 +251,7 @@ h1{
 
 .button:hover{
 
-    background:#001B3A;
+    background:#000000;
 
     color:#F8F6EF;
 
@@ -275,7 +274,7 @@ h1{
 
 .modal-content {
     background: #F8F6EF;
-    color: #001B3A;
+    color: #001630;
     padding: 24px;
     border-radius: 20px;
     width: min(90vw, 500px);
@@ -293,7 +292,7 @@ h1{
     background: transparent;
     font-size: 28px;
     cursor: pointer;
-    color: #001B3A;
+    color: #001630;
 }
 
 .detail-image {
@@ -308,12 +307,12 @@ h1{
 .detail-name {
     font-size: 24px;
     margin: 8px 0;
-    color: #001B3A;
+    color: #001630;
 }
 
 .detail-price {
     font-size: 18px;
-    color: #001B3A;
+    color: #001630;
     margin-bottom: 12px;
 }
 
@@ -321,7 +320,7 @@ h1{
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 16px;
-    color: #001B3A;
+    color: #001630;
 }
 
 .inquire-button,
@@ -329,7 +328,7 @@ h1{
 .add-to-cart-button {
     display: inline-block;
     text-decoration: none;
-    color: #001B3A;
+    color: #001630;
     border: 2px solid #B59410;
     border-radius: 20px;
     padding: 12px 18px;
@@ -342,7 +341,7 @@ h1{
 .inquire-button:hover,
 .instagram-button:hover,
 .add-to-cart-button:hover {
-    background: #001B3A;
+    background: #000000;
     color: #F8F6EF;
 }
 
@@ -434,7 +433,7 @@ h1{
 }
 
 .cart-control-btn {
-    background: white;
+    background: #F8F6EF;
     color: black;
     border: none;
     border-right: 1px solid black;
@@ -454,11 +453,11 @@ h1{
 }
 
 .cart-control-btn:hover:not(:disabled) {
-    background: #f0f0f0;
+    background: #F8F6EF;
 }
 
 .cart-control-btn:disabled {
-    background: #e8e8e8;
+    background: #F8F6EF;
     color: #a0a0a0;
     cursor: not-allowed;
 }
@@ -468,7 +467,7 @@ h1{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
+    background: #000000;
     border: 2px solid black;
     border-radius: 20px;
     padding: 20px 30px;
@@ -487,7 +486,7 @@ h1{
 .cart-quantity-input {
     border: none;
     border-right: 1px solid black;
-    background: white;
+    background: #F8F6EF;
     text-align: center;
     width: 40px;
     font-size: 14px;
@@ -499,7 +498,7 @@ h1{
 }
 
 .cart-remove-btn {
-    background: white;
+    background: #F8F6EF;
     border: 2px solid black;
     border-radius: 4px;
     padding: 4px 8px;
@@ -511,7 +510,7 @@ h1{
 
 .cart-remove-btn:hover {
     background: black;
-    color: white;
+    color: #F8F6EF;
 }
 
 cart.html .site-header {
@@ -547,11 +546,11 @@ cart.html .site-header {
 
 .secondary-button {
     background: #B59410;
-    color: #001B3A;
+    color: #001630;
 }
 
 .secondary-button:hover {
-    background: #001B3A;
+    background: #000000;
     color: #F8F6EF;
 }
 
@@ -619,7 +618,7 @@ cart.html .site-header {
     font-size: 16px;
     font-family: inherit;
     background: #F8F6EF;
-    color: #001B3A;
+    color: #001630;
 }
 
 .checkout-field textarea {
@@ -644,14 +643,14 @@ cart.html .site-header {
 
 .checkout-button {
     cursor: pointer;
-    background:#d9d9d9;
+    background:#F8F6EF;
     color:#4f4f4f;
     border-color:#8a8a8a;
 }
 
 .checkout-button:not(:disabled) {
     background:#B59410;
-    color:#001B3A;
+    color:#001630;
     border-color:#B59410;
 }
 
@@ -684,7 +683,7 @@ cart.html .site-header {
     padding: 10px 12px;
     border: 1px solid black;
     border-radius: 10px;
-    background: #efefef;
+    background: #F8F6EF;
     color: #4d4d4d;
     cursor: pointer;
     margin-left: 4px;
@@ -696,12 +695,12 @@ cart.html .site-header {
     border: 1px solid black;
     border-radius: 10px;
     overflow: hidden;
-    background: white;
+    background: #F8F6EF;
 }
 
 .keychain-option {
     border: none;
-    background: white;
+    background: #F8F6EF;
     text-align: left;
     padding: 10px 12px;
     cursor: pointer;
@@ -714,7 +713,7 @@ cart.html .site-header {
 }
 
 .keychain-option:hover {
-    background: #f5f5f5;
+    background: #F8F6EF;
 }
 
 .add-to-cart-button:disabled,
@@ -741,8 +740,8 @@ cart.html .site-header {
     width: calc(25% - 24px);
     min-width: 220px;
     text-align: center;
-    background: #B59410;
-    color:#001B3A;
+    background: #F8F6EF;
+    color:#001630;
     border: 1px solid #B59410;
     border-radius: 24px;
     padding: 16px 12px;
@@ -750,7 +749,7 @@ cart.html .site-header {
 }
 
 .product-card:hover {
-    background: #001B3A;
+    background: #000000;
     color: #F8F6EF;
 }
 
@@ -789,7 +788,7 @@ cart.html .site-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #F8F6EF;
     font-size: 24px;
     font-weight: bold;
     opacity: 0;
@@ -803,7 +802,7 @@ cart.html .site-header {
 
 @media (max-width: 768px) {
     body {
-        background:#001B3A;
+        background:#001630;
     }
 
     .site-header {
