@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 /* Makes the whole page use this font */
 
 body{
@@ -6,7 +8,7 @@ body{
     font-weight: 400;
     margin:0;
     min-height:100vh;
-    background:#001F3F;
+    background:#001B3A;
     color:#F8F6EF;
 
 }
@@ -206,10 +208,11 @@ h1{
 
     text-align:center;
 
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
     font-size:clamp(32px, 5vw, 56px);
-
+    font-weight:300;
     margin-bottom:40px;
-    color:#F8F6EF;
+    color:#B59410;
     letter-spacing:0.04em;
 
 }
@@ -229,7 +232,7 @@ h1{
 
     text-decoration:none;
 
-    color:#001F3F;
+    color:#001B3A;
 
     border:2px solid #B59410;
 
@@ -239,7 +242,7 @@ h1{
 
     transition:0.3s;
     box-sizing:border-box;
-    background:#F8F6EF;
+    background:#B59410;
     box-shadow:0 6px 16px rgba(0,0,0,0.18);
 
 }
@@ -249,9 +252,9 @@ h1{
 
 .button:hover{
 
-    background:#B59410;
+    background:#001B3A;
 
-    color:#001F3F;
+    color:#F8F6EF;
 
 }
 
@@ -271,7 +274,8 @@ h1{
 }
 
 .modal-content {
-    background: white;
+    background: #F8F6EF;
+    color: #001B3A;
     padding: 24px;
     border-radius: 20px;
     width: min(90vw, 500px);
@@ -289,6 +293,7 @@ h1{
     background: transparent;
     font-size: 28px;
     cursor: pointer;
+    color: #001B3A;
 }
 
 .detail-image {
@@ -303,11 +308,12 @@ h1{
 .detail-name {
     font-size: 24px;
     margin: 8px 0;
+    color: #001B3A;
 }
 
 .detail-price {
     font-size: 18px;
-    color: #555;
+    color: #001B3A;
     margin-bottom: 12px;
 }
 
@@ -315,6 +321,7 @@ h1{
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 16px;
+    color: #001B3A;
 }
 
 .inquire-button,
@@ -322,21 +329,21 @@ h1{
 .add-to-cart-button {
     display: inline-block;
     text-decoration: none;
-    color: black;
-    border: 2px solid black;
+    color: #001B3A;
+    border: 2px solid #B59410;
     border-radius: 20px;
     padding: 12px 18px;
     margin: 8px 6px;
     font-size: 16px;
-    background: white;
+    background: #B59410;
     cursor: pointer;
 }
 
 .inquire-button:hover,
 .instagram-button:hover,
 .add-to-cart-button:hover {
-    background: black;
-    color: white;
+    background: #001B3A;
+    color: #F8F6EF;
 }
 
 .modal-actions {
@@ -377,16 +384,17 @@ h1{
 }
 
 .cart-item {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #F8F6EF;
     padding: 16px 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 16px;
+    color: #F8F6EF;
 }
 
 .cart-item:last-child {
-    border-bottom: 1px solid #B59410;
+    border-bottom: none;
     padding-bottom: 20px;
     margin-bottom: 12px;
 }
@@ -402,11 +410,13 @@ h1{
 .cart-item-name {
     font-weight: 500;
     flex: 1;
+    color: #F8F6EF;
 }
 
 .cart-item-price {
     white-space: nowrap;
     font-size: 16px;
+    color: #F8F6EF;
 }
 
 .cart-item-controls {
@@ -509,7 +519,7 @@ cart.html .site-header {
 }
 
 .cart-summary {
-    border-top: 1px solid #B59410;
+    border-top: 1px solid #F8F6EF;
     padding-top: 16px;
     margin-top: 8px;
     display: flex;
@@ -520,6 +530,7 @@ cart.html .site-header {
 .cart-summary-total {
     font-size: 18px;
     font-weight: bold;
+    color: #F8F6EF;
 }
 
 .cart-actions {
@@ -535,12 +546,13 @@ cart.html .site-header {
 }
 
 .secondary-button {
-    background: white;
+    background: #B59410;
+    color: #001B3A;
 }
 
 .secondary-button:hover {
-    background: black;
-    color: white;
+    background: #001B3A;
+    color: #F8F6EF;
 }
 
 .checkout-page {
@@ -550,6 +562,7 @@ cart.html .site-header {
 .checkout-summary {
     width: min(100%, 700px);
     margin-bottom: 24px;
+    color: #F8F6EF;
 }
 
 .checkout-items {
@@ -564,7 +577,8 @@ cart.html .site-header {
     align-items: center;
     gap: 12px;
     padding: 10px 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #F8F6EF;
+    color: #F8F6EF;
 }
 
 .checkout-item-main {
@@ -594,16 +608,18 @@ cart.html .site-header {
     flex-direction: column;
     gap: 8px;
     font-size: 16px;
+    color: #F8F6EF;
 }
 
 .checkout-field input,
 .checkout-field textarea {
     padding: 12px;
-    border: 2px solid black;
+    border: 2px solid #F8F6EF;
     border-radius: 12px;
     font-size: 16px;
     font-family: inherit;
-    background: #fafafa;
+    background: #F8F6EF;
+    color: #001B3A;
 }
 
 .checkout-field textarea {
@@ -615,6 +631,7 @@ cart.html .site-header {
     font-size: 18px;
     font-weight: bold;
     padding-top: 8px;
+    color: #F8F6EF;
 }
 
 .checkout-actions {
@@ -633,8 +650,8 @@ cart.html .site-header {
 }
 
 .checkout-button:not(:disabled) {
-    background:#F8F6EF;
-    color:#001F3F;
+    background:#B59410;
+    color:#001B3A;
     border-color:#B59410;
 }
 
@@ -724,12 +741,17 @@ cart.html .site-header {
     width: calc(25% - 24px);
     min-width: 220px;
     text-align: center;
-    background: rgba(248,246,239,0.96);
-    color:#001F3F;
+    background: #B59410;
+    color:#001B3A;
     border: 1px solid #B59410;
     border-radius: 24px;
     padding: 16px 12px;
     box-shadow: 0 8px 18px rgba(0,0,0,0.16);
+}
+
+.product-card:hover {
+    background: #001B3A;
+    color: #F8F6EF;
 }
 
 .product-card img {
@@ -781,7 +803,7 @@ cart.html .site-header {
 
 @media (max-width: 768px) {
     body {
-        background:#001F3F;
+        background:#001B3A;
     }
 
     .site-header {
