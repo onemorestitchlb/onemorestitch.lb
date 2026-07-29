@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartBadge = document.getElementById("cartBadge");
   const addToCartButtons = document.querySelectorAll(".add-to-cart-button");
 
-  // Load cart from localStorage
   const loadCart = () => {
     const stored = localStorage.getItem("cart");
     return stored ? JSON.parse(stored) : [];
@@ -17,11 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateBadge = () => {
     const cart = loadCart();
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    if (totalItems > 0) {
-      cartBadge.textContent = totalItems;
-      cartBadge.classList.remove("hidden");
-    } else {
-      cartBadge.classList.add("hidden");
+    if (cartBadge) {
+      if (totalItems > 0) {
+        cartBadge.textContent = totalItems;
+        cartBadge.classList.remove("hidden");
+      } else {
+        cartBadge.classList.add("hidden");
+      }
     }
   };
 
@@ -31,43 +32,44 @@ document.addEventListener("DOMContentLoaded", () => {
     notification.textContent = message;
     document.body.appendChild(notification);
 
-    // Trigger animation
     setTimeout(() => notification.classList.add("show"), 10);
 
-    // Remove after 2 seconds
     setTimeout(() => {
       notification.classList.remove("show");
       setTimeout(() => notification.remove(), 300);
     }, 2000);
   };
 
-  const addToCart = (title, price) => {
+  const addToCart = (title, price, variation = "") => {
     const cart = loadCart();
-    const existing = cart.find((item) => item.title === title);
+    const itemTitle = variation ? `${title} (${variation})` : title;
+    const existing = cart.find((item) => item.title === itemTitle);
     if (existing) {
       existing.quantity += 1;
     } else {
-      cart.push({ title, price, quantity: 1 });
+      cart.push({ title: itemTitle, price, quantity: 1, variation });
     }
     saveCart(cart);
-    showNotification(`${title} added to cart`);
+    showNotification(`${itemTitle} added to cart`);
   };
 
-  // Add to Cart button handlers in modals
   addToCartButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
+      if (btn.disabled) {
+        return;
+      }
+
       const modal = btn.closest(".modal");
       if (modal) {
         const titleElem = modal.querySelector(".detail-name");
         const priceElem = modal.querySelector(".detail-price");
         if (titleElem && priceElem) {
-          addToCart(titleElem.textContent, priceElem.textContent);
+          addToCart(titleElem.textContent, priceElem.textContent, btn.dataset.selection || "");
         }
       }
     });
   });
 
-  // Cart button click
   if (cartButton) {
     cartButton.addEventListener("click", (e) => {
       e.preventDefault();

@@ -48,6 +48,20 @@ const ALL_PRODUCTS = [
     image: "images/custom.jpg",
     description: "Have a favorite color, character, or idea? Request a custom handmade keychain or earrings designed especially for you.",
     category: "custom"
+  },
+  {
+    title: "Crochet Bag",
+    price: "45,000 LBP",
+    image: "images/bags1.svg",
+    description: "A handmade bag made with care and texture.",
+    category: "bags"
+  },
+  {
+    title: "Mini Tote",
+    price: "50,000 LBP",
+    image: "images/bags2.svg",
+    description: "A compact tote with a handmade finish and roomy shape.",
+    category: "bags"
   }
 ];
 

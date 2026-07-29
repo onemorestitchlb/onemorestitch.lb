@@ -4,25 +4,10 @@ body{
 
     font-family: 'Archivo Black', sans-serif;
     font-weight: 400;
-    /* Removes the browser's default spacing */
-
     margin:0;
-
-    /* Centers everything horizontally */
-
-    display:flex;
-
-    justify-content:center;
-
-    /* Centers vertically */
-
-    align-items:center;
-
-    /* Makes the page take up the whole screen */
-
     min-height:100vh;
-
     background:white;
+    color:black;
 
 }
 
@@ -207,6 +192,10 @@ body.modal-open {
     flex-direction:column;
 
     align-items:center;
+    width:min(100%, 1100px);
+    margin:0 auto;
+    padding:100px 20px 40px;
+    box-sizing:border-box;
 
 }
 
@@ -217,9 +206,9 @@ h1{
 
     text-align:center;
 
-    font-size:56px;
+    font-size:clamp(32px, 5vw, 56px);
 
-    margin-bottom:60px;
+    margin-bottom:40px;
 
 }
 
@@ -228,11 +217,11 @@ h1{
 
 .button{
 
-    width:300px;
+    width:min(300px, 100%);
 
-    padding:20px;
+    padding:16px 20px;
 
-    margin:15px;
+    margin:12px 0;
 
     text-align:center;
 
@@ -244,9 +233,10 @@ h1{
 
     border-radius:20px;
 
-    font-size:28px;
+    font-size:clamp(18px, 2.8vw, 28px);
 
     transition:0.3s;
+    box-sizing:border-box;
 
 }
 
@@ -361,7 +351,7 @@ h1{
 
 .cart-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     margin: 20px 0;
 }
 
@@ -392,7 +382,9 @@ h1{
 }
 
 .cart-item:last-child {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 3px solid black;
+    padding-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 .cart-item-name-price {
@@ -512,6 +504,190 @@ cart.html .site-header {
     display: none;
 }
 
+.cart-summary {
+    border-top: 2px solid black;
+    padding-top: 16px;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-summary-total {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.cart-actions .button {
+    margin: 0;
+}
+
+.secondary-button {
+    background: white;
+}
+
+.secondary-button:hover {
+    background: black;
+    color: white;
+}
+
+.checkout-page {
+    padding-top: 40px;
+}
+
+.checkout-summary {
+    width: min(100%, 700px);
+    margin-bottom: 24px;
+}
+
+.checkout-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkout-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.checkout-item-main {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.checkout-item-qty {
+    font-weight: bold;
+}
+
+.checkout-item-price {
+    white-space: nowrap;
+}
+
+.checkout-form {
+    width: min(100%, 700px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.checkout-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.checkout-field input,
+.checkout-field textarea {
+    padding: 12px;
+    border: 2px solid black;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: inherit;
+    background: #fafafa;
+}
+
+.checkout-field textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.checkout-total {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 8px;
+}
+
+.checkout-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.checkout-button {
+    cursor: pointer;
+}
+
+.thank-you-modal {
+    max-width: 420px;
+}
+
+.keychain-option-picker {
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.keychain-option-label {
+    font-size: 15px;
+    text-align: left;
+}
+
+.keychain-select-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 220px;
+    padding: 10px 12px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: #efefef;
+    color: #4d4d4d;
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+.keychain-option-menu {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+}
+
+.keychain-option {
+    border: none;
+    background: white;
+    text-align: left;
+    padding: 10px 12px;
+    cursor: pointer;
+    font: inherit;
+    color: black;
+}
+
+.keychain-option + .keychain-option {
+    border-top: 1px solid black;
+}
+
+.keychain-option:hover {
+    background: #f5f5f5;
+}
+
+.add-to-cart-button:disabled,
+.add-to-cart-button.disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
 /* ========================================= */
 /* PRODUCT GRID                              */
 /* ========================================= */
@@ -522,11 +698,11 @@ cart.html .site-header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 32px;
 }
 
 .product-card {
-    width: 250px;
+    width: min(100%, 250px);
     text-align: center;
 }
 
@@ -540,8 +716,9 @@ cart.html .site-header {
 
 .image-container {
     position: relative;
-    width: 250px;
-    height: 250px;
+    width: min(100%, 250px);
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
 }
 
 .image-container img {
@@ -574,4 +751,52 @@ cart.html .site-header {
 .image-container:hover .overlay {
     opacity: 1;
     background: rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        top: 12px;
+        right: 12px;
+        left: 12px;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        flex: 1 1 100%;
+        order: 2;
+        margin-top: 8px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .container {
+        padding-top: 140px;
+    }
+
+    .product-grid {
+        gap: 24px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cart-item-controls {
+        justify-content: space-between;
+    }
+
+    .checkout-actions,
+    .cart-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .checkout-actions .button,
+    .cart-actions .button {
+        width: 100%;
+    }
 }

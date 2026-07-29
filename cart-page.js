@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const cartItemsContainer = document.getElementById("cartItems");
   const emptyMessage = document.getElementById("emptyMessage");
+  const cartSummary = document.getElementById("cartSummary");
 
   const loadCart = () => {
     const stored = localStorage.getItem("cart");
@@ -19,15 +20,21 @@ document.addEventListener("DOMContentLoaded", () => {
     notification.textContent = message;
     document.body.appendChild(notification);
 
-    // Trigger animation
     setTimeout(() => notification.classList.add("show"), 10);
 
-    // Remove after 2 seconds
     setTimeout(() => {
       notification.classList.remove("show");
       setTimeout(() => notification.remove(), 300);
     }, 2000);
   };
+
+  const parsePrice = (priceText) => {
+    const cleaned = priceText.replace(/[^0-9,.-]/g, "").replace(/,/g, "");
+    const parsed = Number.parseFloat(cleaned);
+    return Number.isNaN(parsed) ? 0 : parsed;
+  };
+
+  const formatPrice = (value) => `${value.toLocaleString("en-US")} LBP`;
 
   const removeItem = (title) => {
     let cart = loadCart();
@@ -52,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateGlobalBadge = () => {
     const cart = loadCart();
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    // This badge might not exist on cart page, so check first
     const badge = document.getElementById("cartBadge");
     if (badge) {
       if (totalItems > 0) {
@@ -70,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (cart.length === 0) {
       emptyMessage.classList.remove("hidden");
+      cartSummary.classList.add("hidden");
       return;
     }
 
@@ -137,6 +144,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       cartItemsContainer.appendChild(itemDiv);
     });
+
+    const subtotal = cart.reduce((sum, item) => sum + parsePrice(item.price) * item.quantity, 0);
+    cartSummary.innerHTML = `<div class="cart-summary-total">Total price: ${formatPrice(subtotal)}</div>`;
+    cartSummary.classList.remove("hidden");
   };
 
   renderCart();

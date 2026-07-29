@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bags</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site-header">
+    <div class="search-box" id="searchBox">
+        <input type="text" class="search-input" id="searchInput" placeholder="What are you looking for?" aria-label="Search products">
+        <span class="search-hint" id="searchHint">What are you looking for?</span>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+    <button class="search-toggle" id="searchToggle" type="button"><img src="search.png" alt="search"></button>
+    <a href="cart.html" class="cart-button" id="cartButton" aria-label="Cart">
+        <img src="cart.jpg" alt="cart">
+        <span class="cart-badge hidden" id="cartBadge">0</span>
+    </a>
+</div>
+
+<div class="container">
+    <h1>Bags</h1>
+
+    <div class="product-grid">
+        <div class="product-card" data-title="Crochet Bag" data-description="A handmade bag made with care and texture." data-link="bags.html">
+            <div class="image-container" tabindex="0" role="button" aria-label="View details for Crochet Bag" data-image="images/bags1.svg" data-title="Crochet Bag" data-price="45,000 LBP" data-description="A handmade bag made with care and texture.">
+                <img src="images/bags1.svg" alt="Crochet Bag">
+                <div class="overlay">View Details</div>
+            </div>
+            <h2>Crochet Bag</h2>
+            <p class="price">45,000 LBP</p>
+        </div>
+
+        <div class="product-card" data-title="Mini Tote" data-description="A compact tote with a handmade finish and roomy shape." data-link="bags.html">
+            <div class="image-container" tabindex="0" role="button" aria-label="View details for Mini Tote" data-image="images/bags2.svg" data-title="Mini Tote" data-price="50,000 LBP" data-description="A compact tote with a handmade finish and roomy shape.">
+                <img src="images/bags2.svg" alt="Mini Tote">
+                <div class="overlay">View Details</div>
+            </div>
+            <h2>Mini Tote</h2>
+            <p class="price">50,000 LBP</p>
+        </div>
+    </div>
+
+    <a href="index.html" class="button">Back</a>
+</div>
+
+<div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <img class="detail-image" src="" alt="">
+        <h2 class="detail-name"></h2>
+        <p class="detail-price"></p>
+        <p class="detail-description"></p>
+        <div class="modal-actions">
+            <button id="inquireButton" class="inquire-button">Inquire</button>
+            <button id="addToCartButton" class="add-to-cart-button">Add to cart</button>
+            <a id="instagramButton" class="instagram-button hidden" href="https://www.instagram.com/onemorestitch.lb?igsh=cTN5Mm93dzJjZDBz&utm_source=qr" target="_blank" rel="noopener noreferrer">Contact on Instagram</a>
+        </div>
+    </div>
+</div>
+
+<script src="product-modal.js"></script>
+<script src="site-ui.js"></script>
+<script src="cart-badge.js"></script>
+</body>
+</html>
