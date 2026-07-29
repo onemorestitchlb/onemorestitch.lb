@@ -59,27 +59,33 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const sendOrderEmail = async (summaryText) => {
-    const payload = new URLSearchParams({
-      name: "New order",
-      email: "rahykay@gmail.com",
-      message: summaryText,
-      _subject: "New order from onemorestitch.lb",
-      _captcha: "false",
+  const payload = new URLSearchParams({
+    name: "New order",
+    email: "rahykay@gmail.com",
+    message: summaryText,
+    _subject: "New order from onemorestitch.lb",
+    _captcha: "false",
+  });
+
+  try {
+    const response = await fetch("https://formsubmit.co/ajax/rahykay@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Accept: "application/json",
+      },
+      body: payload.toString(),
     });
 
-    try {
-      await fetch("https://formsubmit.co/ajax/rahykay@gmail.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          Accept: "application/json",
-        },
-        body: payload.toString(),
-      });
-    } catch (error) {
-      console.error("Order email could not be sent", error);
-    }
-  };
+    const result = await response.json();
+
+    console.log("Status:", response.status);
+    console.log(result);
+
+  } catch (error) {
+    console.error(error);
+  }
+};
 
   const renderCheckout = () => {
     const cart = loadCart();
