@@ -337,48 +337,11 @@ h1{
 
 .detail-image {
     width: 100%;
-    max-width: 320px;
-    height: 320px;
-    object-fit: cover; /* changed from contain */
-    display: block;
-    margin: 0 auto 15px;
+    max-height: 320px;
+    object-fit: cover;
     border-radius: 15px;
     border: 2px solid black;
-}
-
-.detail-slider {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(0,0,0,.6);
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    z-index: 5;
-}
-
-.prev-btn {
-    left: 10px;
-}
-
-.next-btn {
-    right: 10px;
-}
-
-.slider-btn:hover {
-    background: black;
+    margin-bottom: 15px;
 }
 
 .detail-name {
@@ -428,30 +391,6 @@ h1{
     flex-wrap: wrap;
     gap: 8px;
     margin-top: 12px;
-}
-
-.modal-back-button {
-    display: block;
-    width: fit-content;
-    margin: 18px auto 0;
-
-    padding: 12px 25px;
-
-    background: #b09116;
-    color: #001328;
-
-    border: 2px solid #b09116;
-    border-radius: 20px;
-
-    text-decoration: none;
-    font-size: 16px;
-
-    transition: 0.3s;
-}
-
-.modal-back-button:hover {
-    background: black;
-    color: #f9f3da;
 }
 
 .hidden {
@@ -935,22 +874,6 @@ cart.html .site-header {
     body {
         background:#001328;
     }
-
-    .modal {
-    padding: 10px;
-}
-
-.modal-content {
-    width: 95vw;
-    max-height: 85vh;
-    padding: 18px;
-}
-
-.detail-image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-}
 
     .site-header {
         top: 12px;

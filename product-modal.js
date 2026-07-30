@@ -7,10 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const closeButton = modal.querySelector(".modal-close");
   const detailImage = modal.querySelector(".detail-image");
-  const prevImageButton = document.getElementById("prevImage");
-  const nextImageButton = document.getElementById("nextImage");
-  let currentImages = [];
-  let currentImageIndex = 0;
   const detailName = modal.querySelector(".detail-name");
   const detailPrice = modal.querySelector(".detail-price");
   const detailDescription = modal.querySelector(".detail-description");
@@ -91,20 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const openModal = (card) => {
-    currentImages = card.dataset.images.split(",");
-    currentImageIndex = 0;
-
-    detailImage.src = currentImages[0];
-
-    // Show or hide the arrows depending on how many images there are
-    if (currentImages.length <= 1) {
-        prevImageButton.style.display = "none";
-        nextImageButton.style.display = "none";
-    } else {
-        prevImageButton.style.display = "flex";
-        nextImageButton.style.display = "flex";
-    }
-    
+    detailImage.src = card.dataset.image;
     detailImage.alt = card.dataset.title;
     detailName.textContent = card.dataset.title;
     detailPrice.textContent = card.querySelector(".price")?.textContent?.trim() || card.dataset.price || "";
@@ -169,34 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
       instagramButton.classList.remove("hidden");
     });
   }
-
-  if (prevImageButton) {
-  prevImageButton.addEventListener("click", () => {
-    if (currentImages.length <= 1) return;
-
-    currentImageIndex--;
-
-    if (currentImageIndex < 0) {
-      currentImageIndex = currentImages.length - 1;
-    }
-
-    detailImage.src = currentImages[currentImageIndex];
-  });
-}
-
-if (nextImageButton) {
-  nextImageButton.addEventListener("click", () => {
-    if (currentImages.length <= 1) return;
-
-    currentImageIndex++;
-
-    if (currentImageIndex >= currentImages.length) {
-      currentImageIndex = 0;
-    }
-
-    detailImage.src = currentImages[currentImageIndex];
-  });
-}
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && modal.classList.contains("active")) {
