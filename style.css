@@ -336,22 +336,14 @@ h1{
 }
 
 .detail-image {
-
-    width:100%;
-    max-width:320px;
-
-    height:320px;
-
-    object-fit:contain;
-
-    display:block;
-
-    margin:0 auto 15px;
-
-    border-radius:15px;
-
-    border:2px solid black;
-
+    width: 100%;
+    max-width: 320px;
+    height: 320px;
+    object-fit: cover; /* changed from contain */
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 15px;
+    border: 2px solid black;
 }
 
 .detail-slider {
@@ -436,6 +428,30 @@ h1{
     flex-wrap: wrap;
     gap: 8px;
     margin-top: 12px;
+}
+
+.modal-back-button {
+    display: block;
+    width: fit-content;
+    margin: 18px auto 0;
+
+    padding: 12px 25px;
+
+    background: #b09116;
+    color: #001328;
+
+    border: 2px solid #b09116;
+    border-radius: 20px;
+
+    text-decoration: none;
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.modal-back-button:hover {
+    background: black;
+    color: #f9f3da;
 }
 
 .hidden {
@@ -919,6 +935,22 @@ cart.html .site-header {
     body {
         background:#001328;
     }
+
+    .modal {
+    padding: 10px;
+}
+
+.modal-content {
+    width: 95vw;
+    max-height: 85vh;
+    padding: 18px;
+}
+
+.detail-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
 
     .site-header {
         top: 12px;
