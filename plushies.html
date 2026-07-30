@@ -44,7 +44,7 @@
         <div class="product-card" data-title="Pompompurin" data-description="This is a plushie item. Greetings." data-link="plushies.html">
 
             <!-- Product image -->
-            <div class="image-container" tabindex="0" role="button" aria-label="View details for Pompompurin" data-image="pompompurin.png" data-title="Pompompurin" data-price="$30.00" data-description="This is a plushie item. Greetings.">
+            <div class="image-container" tabindex="0" role="button" aria-label="View details for Pompompurin" data-images="pompompurin.png" data-title="Pompompurin" data-price="$30.00" data-description="This is a plushie item. Greetings.">
                 <img src="pompompurin.png" alt="Pompompurin">
                 <div class="overlay">View Details</div>
             </div>
@@ -59,7 +59,7 @@
 
         <div class="product-card" data-title="Winnie The Pooh" data-description="This is a plushie item. Greetings." data-link="plushies.html">
 
-        <div class="image-container" tabindex="0" role="button" aria-label="View details for Winnie The Pooh" data-image="winniethepooh.png" data-title="Winnie The Pooh" data-price="$25.00" data-description="This is a plushie item. Greetings.">
+        <div class="image-container" tabindex="0" role="button" aria-label="View details for Winnie The Pooh" data-images="winniethepooh.png" data-title="Winnie The Pooh" data-price="$25.00" data-description="This is a plushie item. Greetings.">
             <img src="winniethepooh.png" alt="Winnie The Pooh">
             <div class="overlay">View Details</div>
         </div>
@@ -74,8 +74,14 @@
 
     <div id="productModal" class="modal" aria-hidden="true">
         <div class="modal-content">
-            <button class="modal-close" aria-label="Close">&times;</button>
-            <img class="detail-image" src="" alt="">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="detail-slider">
+        <button class="slider-btn prev-btn" id="prevImage">&#10094;</button>
+        <img class="detail-image" src="" alt="">
+        <button class="slider-btn next-btn" id="nextImage">&#10095;</button>
+    </div>
             <h2 class="detail-name"></h2>
             <p class="detail-price"></p>
             <!-- This is the place to write your description. -->
