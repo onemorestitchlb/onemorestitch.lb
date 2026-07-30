@@ -1,16 +1,16 @@
 // All products database for searching
 const ALL_PRODUCTS = [
   {
-    title: "Hey",
-    price: "$25.00",
-    image: "hey.jpg",
+    title: "Pompompurin",
+    price: "$30.00",
+    image: "pompompurin.png",
     description: "This is a plushie item. Greetings.",
     category: "plushies"
   },
   {
-    title: "Hi",
-    price: "$30.00",
-    image: "hi.jpg",
+    title: "Winnie The Pooh",
+    price: "$25.00",
+    image: "winniethepooh.png",
     description: "This is a plushie item. Greetings.",
     category: "plushies"
   },
@@ -29,30 +29,23 @@ const ALL_PRODUCTS = [
     category: "keychains"
   },
   {
-    title: "Crochet Earrings",
-    price: "$15.00",
-    image: "images/earrings1.jpg",
-    description: "This is an earring item. Write your description here.",
-    category: "earrings"
+    title: "White Cat Scrunchie",
+    price: "$10.00",
+    image: "white-cat-scrunchie.png",
+    description: "This is a scrunchie item. Write your description here.",
+    category: "scrunchies"
   },
   {
-    title: "Flower Earrings",
-    price: "$20.00",
-    image: "images/earrings2.jpg",
-    description: "This is an earring item. Write your description here.",
-    category: "earrings"
+    title: "Black Cat Scrunchie",
+    price: "$10.00",
+    image: "black-cat-scrunchie.png",
+    description: "This is a scrunchie item. Write your description here.",
+    category: "scrunchies"
   },
   {
-    title: "Create Your Own Piece",
-    price: "Custom Pricing",
-    image: "images/custom.jpg",
-    description: "Have a favorite color, character, or idea? Request a custom handmade keychain or earrings designed especially for you.",
-    category: "custom"
-  },
-  {
-    title: "Crochet Bag",
-    price: "$45.00",
-    image: "images/bags1.svg",
+    title: "Pokeball Bag",
+    price: "$30.00",
+    image: "pokeball-bag1.png",
     description: "A handmade bag made with care and texture.",
     category: "bags"
   },
@@ -62,7 +55,15 @@ const ALL_PRODUCTS = [
     image: "images/bags2.svg",
     description: "A compact tote with a handmade finish and roomy shape.",
     category: "bags"
+  },
+  {
+    title: "Create Your Own Piece",
+    price: "Custom Pricing",
+    image: "images/custom.jpg",
+    description: "Have a favorite color, character, or idea? Request a custom handmade keychain or earrings designed especially for you.",
+    category: "custom"
   }
+  
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
