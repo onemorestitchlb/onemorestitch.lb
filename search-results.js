@@ -17,7 +17,7 @@ const ALL_PRODUCTS = [
   {
     title: "Black Cat Scrunchie",
     price: "$10.00",
-    image: "black-cat-scrunchie.png",
+    image: "images/black-cat-scrunchie.png",
     description: "This is a scrunchie item. Write your description here.",
     category: "scrunchies"
   },
@@ -59,14 +59,14 @@ const ALL_PRODUCTS = [
   {
     title: "Pokeball Bag",
     price: "$30.00",
-    image: "pokeball-bag1.png",
+    image: "images/pokeball-bag1.png",
     description: "A handmade bag made with care and texture.",
     category: "bags"
   },
   {
     title: "Pompompurin",
     price: "$30.00",
-    image: "pompompurin.png",
+    image: "images/pompompurin.png",
     description: "This is a plushie item. Greetings.",
     category: "plushies"
   },
@@ -94,14 +94,14 @@ const ALL_PRODUCTS = [
   {
     title: "White Cat Scrunchie",
     price: "$10.00",
-    image: "white-cat-scrunchie.png",
+    image: "images/white-cat-scrunchie.png",
     description: "This is a scrunchie item. Write your description here.",
     category: "scrunchies"
   },
   {
     title: "Winnie The Pooh",
     price: "$25.00",
-    image: "winniethepooh.png",
+    image: "images/winniethepooh.png",
     description: "This is a plushie item. Greetings.",
     category: "plushies"
   },

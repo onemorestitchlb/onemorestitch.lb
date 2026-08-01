@@ -47,8 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
           return normalized;
         }
 
-        const normalized = item.replace(/\\/g, "/");
-        return normalized;
+        return `images/${normalized}`;
       })
       .filter(Boolean);
   };
