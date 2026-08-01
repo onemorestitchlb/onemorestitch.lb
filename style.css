@@ -244,6 +244,10 @@ h1{
 }
 
 
+/* ========================== */
+/* BACK BUTTON */
+/* ========================== */
+
 /* Every button */
 
 .button{
@@ -293,6 +297,15 @@ h1{
 .secondary-button:disabled {
     cursor: not-allowed;
     opacity: 0.65;
+}
+
+.button:hover:disabled,
+.button.disabled:hover,
+.add-to-cart-button:hover:disabled,
+.add-to-cart-button.disabled:hover,
+.checkout-button:hover:disabled,
+.secondary-button:hover:disabled {
+    cursor: not-allowed;
 }
 
 
@@ -417,6 +430,10 @@ h1{
 .hidden {
     display: none;
 }
+
+/* ========================== */
+/* ADD TO CART BUTTON */
+/* ========================== */
 
 /* Cart Page Styles */
 
@@ -808,6 +825,26 @@ cart.html .site-header {
     opacity: 0.65;
     cursor: not-allowed;
 }
+
+/* ========================== */
+/* PROCEED TO CHECKOUT BUTTON */
+/* ========================== */
+
+/* ========================== */
+/* BACK TO HOME BUTTON */
+/* ========================== */
+
+/* ========================== */
+/* INQUIRE BUTTON */
+/* ========================== */
+
+/* ========================== */
+/* CONFIRM ORDER BUTTON */
+/* ========================== */
+
+/* ========================== */
+/* CONTINUE SHOPPING BUTTON */
+/* ========================== */
 
 /* ========================================= */
 /* PRODUCT GRID                              */

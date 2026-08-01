@@ -148,7 +148,9 @@ document.addEventListener("DOMContentLoaded", () => {
           detailName.textContent = container.dataset.title;
           detailPrice.textContent = container.dataset.price;
           detailDescription.textContent = container.dataset.description || "Write your description here.";
-          instagramButton.classList.add("hidden");
+          if (instagramButton) {
+            instagramButton.classList.add("hidden");
+          }
 
           const inquireButton = modal.querySelector("#inquireButton");
           const addToCartButton = modal.querySelector("#addToCartButton");

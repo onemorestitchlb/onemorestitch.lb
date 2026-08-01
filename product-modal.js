@@ -16,6 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const instagramButton = document.getElementById("instagramButton");
   const addToCartButton = document.getElementById("addToCartButton");
   const modalContent = modal.querySelector(".modal-content");
+  const instagramUrl = "https://www.instagram.com/onemorestitch.lb?igsh=cTN5Mm93dzJjZDBz&utm_source=qr";
+
+  if (inquireButton) {
+    inquireButton.dataset.instagramUrl = instagramUrl;
+  }
 
   let keychainPicker = null;
   let activeModalImages = [];
@@ -32,7 +37,19 @@ document.addEventListener("DOMContentLoaded", () => {
       .split(",")
       .map((item) => item.trim())
       .filter(Boolean)
-      .map((item) => (item.startsWith("http") || item.startsWith("/") || item.startsWith("images/") ? item : `images/${item}`));
+      .map((item) => {
+        if (!item) {
+          return "";
+        }
+
+        const normalized = item.replace(/\\/g, "/");
+        if (normalized.startsWith("http") || normalized.startsWith("/") || normalized.startsWith("images/")) {
+          return normalized;
+        }
+
+        return `images/${normalized}`;
+      })
+      .filter(Boolean);
   };
 
   const getCardImages = (card) => parseImages(card.dataset.images || card.dataset.image || card.querySelector("img")?.getAttribute("src") || "");
@@ -245,7 +262,9 @@ document.addEventListener("DOMContentLoaded", () => {
     detailDescription.textContent = description;
     inquireButton.classList.remove("hidden");
     addToCartButton.classList.remove("hidden");
-    instagramButton.classList.add("hidden");
+    if (instagramButton) {
+      instagramButton.classList.add("hidden");
+    }
 
     const titleText = (title || "").toLowerCase();
     const isKeychain = titleText.includes("keychain");
@@ -384,11 +403,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  if (inquireButton && instagramButton && addToCartButton) {
+  if (inquireButton) {
     inquireButton.addEventListener("click", () => {
-      inquireButton.classList.add("hidden");
-      addToCartButton.classList.add("hidden");
-      instagramButton.classList.remove("hidden");
+      if (inquireButton.dataset.instagramUrl) {
+        window.open(inquireButton.dataset.instagramUrl, "_blank", "noopener,noreferrer");
+      } else if (instagramButton) {
+        instagramButton.classList.remove("hidden");
+      }
     });
   }
 
