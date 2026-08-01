@@ -3,14 +3,14 @@ const ALL_PRODUCTS = [
   {
     title: "Bear",
     price: "$25.00",
-    image: "bear.png",
+    image: "images/bear.png",
     description: "This is a plushie item. Write your description here.",
     category: "plushies"
   },
   {
     title: "Beaver",
     price: "$10.00",
-    image: "beaver1.png",
+    image: "images/beaver1.png",
     description: "This is a plushie item. Write your description here.",
     category: "plushies"
   },
@@ -24,35 +24,35 @@ const ALL_PRODUCTS = [
   {
     title: "Bunny",
     price: "$10.00",
-    image: "bunny.png",
+    image: "images/bunny.png",
     description: "This is a plushie item. Write your description here.",
     category: "plushies"
   },
    {
     title: "Mini Bunny",
     price: "$25.00",
-    image: "mini-bunny.png",
+    image: "images/mini-bunny.png",
     description: "This is a plushie item. Write your description here.",
     category: "plushies"
   },
   {
     title: "Mushroom Garden Turtle",
     price: "$25.00",
-    image: "mmushroom-turtle1.png",
+    image: "images/mmushroom-turtle1.png",
     description: "This is a plushie item. Write your description here.",
     category: "plushies"
   },
   {
     title: "Mushroom Turtle",
     price: "$25.00",
-    image: "mushroom-turtle1.png",
+    image: "images/mushroom-turtle1.png",
     description: "This is a plushie item. Write your description here.",
     category: "plushies"
   },
   {
     title: "Peach Turtle",
     price: "$25.00",
-    image: "peach-turtle1.png",
+    image: "images/peach-turtle1.png",
     description: "This is a plushie item. Write your description here.",
     category: "plushies"
   },
@@ -73,21 +73,21 @@ const ALL_PRODUCTS = [
   {
     title: "Potato",
     price: "$30.00",
-    image: "potato.png",
+    image: "images/potato.png",
     description: "This is a plushie item. Write your description here.",
     category: "plushies"
   },
    {
     title: "Strawberry Turtle",
     price: "$25.00",
-    image: "strawberry-turtle1.png",
+    image: "images/strawberry-turtle1.png",
     description: "This is a plushie item. Write your description here.",
     category: "plushies"
   },
    {
     title: "Totoro",
     price: "$25.00",
-    image: "totoro1.png",
+    image: "images/totoro1.png",
     description: "This is a plushie item. Write your description here.",
     category: "plushies"
   },
