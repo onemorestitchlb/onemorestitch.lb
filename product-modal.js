@@ -43,11 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const normalized = item.replace(/\\/g, "/");
-        if (normalized.startsWith("http") || normalized.startsWith("/") || normalized.startsWith("images/")) {
-          return normalized;
-        }
-
-        return `images/${normalized}`;
+        return normalized;
       })
       .filter(Boolean);
   };

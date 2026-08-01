@@ -1,23 +1,103 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=https://forms.gle/4Tx4J1RxLmWvnyVr7">
+
     <title>Custom</title>
+    <meta http-equiv="refresh" content="0; url=https://forms.gle/4Tx4J1RxLmWvnyVr7">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
-<div class="container">
-    <h1>Redirecting...</h1>
-    <p>If you are not redirected automatically, use this link: <a href="https://forms.gle/4Tx4J1RxLmWvnyVr7">https://forms.gle/4Tx4J1RxLmWvnyVr7</a></p>
+
+<div class="site-header">
+    <div class="search-box" id="searchBox">
+        <input type="text" class="search-input" id="searchInput" placeholder="What are you looking for?" aria-label="Search products">
+        <span class="search-hint" id="searchHint">What are you looking for?</span>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+    <button class="search-toggle" id="searchToggle" type="button"><img src="search.png" alt="search"></button>
+        <a href="cart.html" class="cart-button" id="cartButton" aria-label="Cart">
+            <img src="cart-removebg-preview.png" alt="cart">
+            <span class="cart-badge hidden" id="cartBadge">0</span>
+        </a>
 </div>
+
+<div class="container">
+
+
+    <!-- Page title -->
+    <h1>Custom</h1>
+
+
+
+    <!-- Holds every product -->
+    <div class="product-grid">
+
+
+        <!-- ===== Custom Order ===== -->
+        <div class="product-card" data-title="Create Your Own Piece" data-description="Have a favorite color, character, or idea? Request a custom handmade keychain or earrings designed especially for you." data-link="custom.html">
+
+
+            <div class="image-container">
+                <img src="custom.jpg" alt="Custom Crochet Order">
+                <div class="overlay">View Details</div>
+            </div>
+
+
+            <h2>Create Your Own Piece</h2>
+
+
+            <p>
+                Have a favorite color, character, or idea?
+                Request a custom handmade keychain or earrings
+                designed especially for you.
+            </p>
+
+
+            <p class="price">
+                Custom Pricing
+            </p>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+    <!-- Back button -->
+    <a href="index.html" class="button">
+        Back
+    </a>
+
+
+
+</div>
+
+
+
+</body>
+
 <script>
     window.location.replace("https://forms.gle/4Tx4J1RxLmWvnyVr7");
 </script>
-</body>
+<script src="site-ui.js"></script>
+<script src="cart-badge.js"></script>
+
 </html>
