@@ -29,7 +29,7 @@
 
     <div class="product-grid">
         <div class="product-card" data-title="Pokeball Bag" data-description="A handmade bag made with care and texture." data-link="bags.html">
-            <div class="image-container" tabindex="0" role="button" aria-label="View details for Pokeball Bag" data-images="pokeball-bag1.png,pokeball-bag2.png,pokeball-bag3.png" data-title="Pokeball Bag" data-price="$45.00" data-description="A handmade bag made with care and texture.">
+            <div class="image-container" tabindex="0" role="button" aria-label="View details for Pokeball Bag" data-images="pokeball-bag1.png,pokeball-bag2.png" data-modal-images="horizontal-pokeball-bag1.png,horizontal-pokeball-bag2.png" data-title="Pokeball Bag" data-price="$45.00" data-description="A handmade bag made with care and texture.">
                 <img src="pokeball-bag1.png" alt="Pokeball Bag">
                 <div class="overlay">View Details</div>
             </div>
@@ -53,10 +53,9 @@
 <div id="productModal" class="modal" aria-hidden="true">
     <div class="modal-content">
         <button class="modal-close" aria-label="Close">&times;</button>
-        <img class="detail-image" src="" alt="">
-        <h2 class="detail-name"></h2>
-        <p class="detail-price"></p>
-        <p class="detail-description"></p>
+        <div class="detail-gallery">
+            <img class="detail-image" src="" alt="">
+        </div>
         <div class="modal-actions">
             <button id="inquireButton" class="inquire-button">Inquire</button>
             <button id="addToCartButton" class="add-to-cart-button">Add to cart</button>
