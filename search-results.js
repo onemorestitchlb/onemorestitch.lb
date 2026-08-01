@@ -1,70 +1,112 @@
 // All products database for searching
 const ALL_PRODUCTS = [
   {
-    title: "Pompompurin",
-    price: "$30.00",
-    image: "pompompurin.png",
-    description: "This is a plushie item. Greetings.",
-    category: "plushies"
-  },
-  {
-    title: "Winnie The Pooh",
+    title: "Bear",
     price: "$25.00",
-    image: "winniethepooh.png",
-    description: "This is a plushie item. Greetings.",
+    image: "images/bear.png",
+    description: "This is a plushie item. Write your description here.",
     category: "plushies"
   },
   {
-    title: "Crochet Keychain",
+    title: "Beaver",
     price: "$10.00",
-    image: "keychain1.svg",
-    description: "This is a keychain item. Write your description here.",
-    category: "keychains"
-  },
-  {
-    title: "Mini Keychain",
-    price: "$15.00",
-    image: "keychain2.svg",
-    description: "This is a keychain item. Write your description here.",
-    category: "keychains"
-  },
-  {
-    title: "White Cat Scrunchie",
-    price: "$10.00",
-    image: "white-cat-scrunchie.png",
-    description: "This is a scrunchie item. Write your description here.",
-    category: "scrunchies"
+    image: "images/beaver1.png",
+    description: "This is a plushie item. Write your description here.",
+    category: "plushies"
   },
   {
     title: "Black Cat Scrunchie",
     price: "$10.00",
-    image: "black-cat-scrunchie.png",
+    image: "images/black-cat-scrunchie.png",
     description: "This is a scrunchie item. Write your description here.",
     category: "scrunchies"
   },
   {
+    title: "Bunny",
+    price: "$10.00",
+    image: "images/bunny.png",
+    description: "This is a plushie item. Write your description here.",
+    category: "plushies"
+  },
+   {
+    title: "Mini Bunny",
+    price: "$25.00",
+    image: "images/mini-bunny.png",
+    description: "This is a plushie item. Write your description here.",
+    category: "plushies"
+  },
+  {
+    title: "Mushroom Garden Turtle",
+    price: "$25.00",
+    image: "images/mmushroom-turtle1.png",
+    description: "This is a plushie item. Write your description here.",
+    category: "plushies"
+  },
+  {
+    title: "Mushroom Turtle",
+    price: "$25.00",
+    image: "images/mushroom-turtle1.png",
+    description: "This is a plushie item. Write your description here.",
+    category: "plushies"
+  },
+  {
+    title: "Peach Turtle",
+    price: "$25.00",
+    image: "images/peach-turtle1.png",
+    description: "This is a plushie item. Write your description here.",
+    category: "plushies"
+  },
+  {
     title: "Pokeball Bag",
     price: "$30.00",
-    image: "pokeball-bag1.png",
+    image: "images/pokeball-bag1.png",
     description: "A handmade bag made with care and texture.",
     category: "bags"
   },
   {
-    title: "Mini Tote",
-    price: "$50.00",
-    image: "bags2.svg",
-    description: "A compact tote with a handmade finish and roomy shape.",
-    category: "bags"
+    title: "Pompompurin",
+    price: "$30.00",
+    image: "images/pompompurin.png",
+    description: "This is a plushie item. Greetings.",
+    category: "plushies"
   },
   {
-    title: "Create Your Own Piece",
-    price: "Custom Pricing",
-    image: "custom.jpg",
-    description: "Have a favorite color, character, or idea? Request a custom handmade keychain or earrings designed especially for you.",
-    category: "custom"
-  }
-  
+    title: "Potato",
+    price: "$30.00",
+    image: "images/potato.png",
+    description: "This is a plushie item. Write your description here.",
+    category: "plushies"
+  },
+   {
+    title: "Strawberry Turtle",
+    price: "$25.00",
+    image: "images/strawberry-turtle1.png",
+    description: "This is a plushie item. Write your description here.",
+    category: "plushies"
+  },
+   {
+    title: "Totoro",
+    price: "$25.00",
+    image: "images/totoro1.png",
+    description: "This is a plushie item. Write your description here.",
+    category: "plushies"
+  },
+  {
+    title: "White Cat Scrunchie",
+    price: "$10.00",
+    image: "images/white-cat-scrunchie.png",
+    description: "This is a scrunchie item. Write your description here.",
+    category: "scrunchies"
+  },
+  {
+    title: "Winnie The Pooh",
+    price: "$25.00",
+    image: "images/winniethepooh.png",
+    description: "This is a plushie item. Greetings.",
+    category: "plushies"
+  },
 ];
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
