@@ -291,6 +291,9 @@ h1{
 
 .button:disabled,
 .button.disabled,
+.button[aria-disabled="true"],
+a.button.disabled,
+a.button[aria-disabled="true"],
 .add-to-cart-button:disabled,
 .add-to-cart-button.disabled,
 .checkout-button:disabled,
@@ -859,7 +862,7 @@ cart.html .site-header {
     gap: 32px;
     width: 100%;
     margin-top: 0px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .product-card {

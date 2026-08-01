@@ -84,10 +84,14 @@ document.addEventListener("DOMContentLoaded", () => {
         checkoutLink.classList.add("disabled");
         checkoutLink.setAttribute("aria-disabled", "true");
         checkoutLink.removeAttribute("href");
+        checkoutLink.style.cursor = "not-allowed";
+        checkoutLink.style.pointerEvents = "none";
       } else {
         checkoutLink.classList.remove("disabled");
         checkoutLink.setAttribute("aria-disabled", "false");
         checkoutLink.setAttribute("href", "checkout.html");
+        checkoutLink.style.cursor = "pointer";
+        checkoutLink.style.pointerEvents = "auto";
       }
     }
   };

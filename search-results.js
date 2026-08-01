@@ -3,49 +3,49 @@ const ALL_PRODUCTS = [
   {
     title: "Pompompurin",
     price: "$30.00",
-    image: "pompompurin.png",
+    image: "images/pompompurin.png",
     description: "This is a plushie item. Greetings.",
     category: "plushies"
   },
   {
     title: "Winnie The Pooh",
     price: "$25.00",
-    image: "winniethepooh.png",
+    image: "images/winniethepooh.png",
     description: "This is a plushie item. Greetings.",
     category: "plushies"
   },
   {
     title: "Crochet Keychain",
     price: "$10.00",
-    image: "images/keychain1.jpg",
+    image: "images/keychain1.svg",
     description: "This is a keychain item. Write your description here.",
     category: "keychains"
   },
   {
     title: "Mini Keychain",
     price: "$15.00",
-    image: "images/keychain2.jpg",
+    image: "images/keychain2.svg",
     description: "This is a keychain item. Write your description here.",
     category: "keychains"
   },
   {
     title: "White Cat Scrunchie",
     price: "$10.00",
-    image: "white-cat-scrunchie.png",
+    image: "images/white-cat-scrunchie.png",
     description: "This is a scrunchie item. Write your description here.",
     category: "scrunchies"
   },
   {
     title: "Black Cat Scrunchie",
     price: "$10.00",
-    image: "black-cat-scrunchie.png",
+    image: "images/black-cat-scrunchie.png",
     description: "This is a scrunchie item. Write your description here.",
     category: "scrunchies"
   },
   {
     title: "Pokeball Bag",
     price: "$30.00",
-    image: "pokeball-bag1.png",
+    image: "images/pokeball-bag1.png",
     description: "A handmade bag made with care and texture.",
     category: "bags"
   },
@@ -59,7 +59,7 @@ const ALL_PRODUCTS = [
   {
     title: "Create Your Own Piece",
     price: "Custom Pricing",
-    image: "images/custom.jpg",
+    image: "images/custom.svg",
     description: "Have a favorite color, character, or idea? Request a custom handmade keychain or earrings designed especially for you.",
     category: "custom"
   }
