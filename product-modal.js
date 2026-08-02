@@ -253,9 +253,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const price = card.querySelector(".price")?.textContent?.trim() || card.dataset.price || "";
     const description = card.dataset.description || "Write your description here.";
 
-    detailName.textContent = title;
-    detailPrice.textContent = price;
-    detailDescription.textContent = description;
+    if (detailName) {
+      detailName.textContent = title;
+    }
+    if (detailPrice) {
+      detailPrice.textContent = price;
+    }
+    if (detailDescription) {
+      detailDescription.textContent = description;
+    }
     inquireButton.classList.remove("hidden");
     addToCartButton.classList.remove("hidden");
     if (instagramButton) {
