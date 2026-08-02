@@ -11,7 +11,7 @@ body{
     background-image: url("flower-top-right.png"), url("flower-bottom-left.png");
     background-repeat: no-repeat, no-repeat;
     background-position: top right, bottom left;
-    background-size: 300px auto, 300px auto;
+    background-size: 290px auto, 290px auto;
     background-attachment: fixed, fixed;
     color:#f9f3da;
 }
@@ -243,6 +243,7 @@ h1{
 
     font-size:clamp(32px, 5vw, 56px);
     font-weight:300;
+    margin-top:0;
     margin-bottom:40px;
     color:#f9f3da;
     letter-spacing:0.04em;
@@ -250,6 +251,7 @@ h1{
 }
 
 .page-title-spacing {
+    margin-top: 0;
     margin-bottom: 30px;
 }
 
