@@ -215,7 +215,7 @@ body.modal-open {
     align-items:center;
     width:min(100%, 1100px);
     margin:0 auto;
-    padding:70px 20px 40px;
+    padding:55px 20px 40px;
     box-sizing:border-box;
     position: relative;
     overflow: hidden;
