@@ -8,10 +8,19 @@ body{
     margin:0;
     min-height:100vh;
     background-color:#001328;
-    background-image: url("floral-pattern.png");
-    background-repeat: repeat;
-    background-attachment: fixed;
+    background-image: url("flower-top-right.png"), url("flower-bottom-left.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top right, bottom left;
+    background-size: 260px auto, 260px auto;
+    background-attachment: fixed, fixed;
     color:#f9f3da;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll, scroll;
+        background-size: 160px auto, 160px auto;
+    }
 }
 
 button,
