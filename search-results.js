@@ -39,7 +39,7 @@ const ALL_PRODUCTS = [
     title: "Mini Bunny",
     price: "$15.00",
     image: "images/mini-bunny.png",
-    description: "This is a plushie item. Write your description here.",
+    description: "9cm x 13cm",
     category: "plushies"
   },
   {
