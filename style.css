@@ -9,10 +9,10 @@ body{
     margin:0;
     min-height:100vh;
     background-color:#001328;
-    background-image: url("flower-top-right-transparent.png"), url("flower-bottom-left.png");
+    background-image: url("flower-top-rightt.png"), url("flower-bottom-left.png");
     background-repeat: no-repeat, no-repeat;
     background-position: top left, bottom right;
-    background-size: 200px auto, 290px auto;
+    background-size: 290px auto, 290px auto;
     background-attachment: fixed, fixed;
     color:#f9f3da;
 
