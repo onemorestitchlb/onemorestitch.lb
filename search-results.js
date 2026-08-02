@@ -1,101 +1,115 @@
 // All products database for searching
 const ALL_PRODUCTS = [
   {
+    title: "Baby Bear",
+    price: "$20.00",
+    image: "images/baby-bear.png",
+    description: "15cm x 23cm",
+    category: "plushies"
+  },
+  {
     title: "Bear",
     price: "$25.00",
     image: "images/bear.png",
-    description: "This is a plushie item. Write your description here.",
+    description: "19cm x 27cm",
     category: "plushies"
   },
   {
     title: "Beaver",
-    price: "$10.00",
+    price: "$35.00",
     image: "images/beaver1.png",
-    description: "This is a plushie item. Write your description here.",
+    description: "28cm x 40cm",
     category: "plushies"
   },
   {
     title: "Black Cat Scrunchie",
     price: "$10.00",
     image: "images/black-cat-scrunchie.png",
-    description: "This is a scrunchie item. Write your description here.",
+    description: "Can be used as a hair tie or wrist accessory",
     category: "scrunchies"
   },
   {
     title: "Bunny",
-    price: "$10.00",
+    price: "$20.00",
     image: "images/bunny.png",
-    description: "This is a plushie item. Write your description here.",
+    description: "28cm x 23cm",
     category: "plushies"
   },
    {
     title: "Mini Bunny",
-    price: "$25.00",
+    price: "$15.00",
     image: "images/mini-bunny.png",
     description: "This is a plushie item. Write your description here.",
     category: "plushies"
   },
   {
     title: "Mushroom Garden Turtle",
-    price: "$25.00",
+    price: "$55.00",
     image: "images/mmushroom-turtle1.png",
-    description: "This is a plushie item. Write your description here.",
+    description: "27cm x 23cm",
     category: "plushies"
   },
   {
     title: "Mushroom Turtle",
-    price: "$25.00",
+    price: "$45.00",
     image: "images/mushroom-turtle1.png",
-    description: "This is a plushie item. Write your description here.",
+    description: "27cm x 23cm",
     category: "plushies"
   },
   {
     title: "Peach Turtle",
-    price: "$25.00",
+    price: "$40.00",
     image: "images/peach-turtle1.png",
-    description: "This is a plushie item. Write your description here.",
+    description: "27cm x 23cm",
     category: "plushies"
   },
   {
     title: "Pokeball Bag",
-    price: "$30.00",
+    price: "$45.00",
     image: "images/pokeball-bag1.png",
-    description: "A handmade bag made with care and texture.",
+    description: "Perfect for carrying your essentials in style.",
     category: "bags"
   },
   {
     title: "Pompompurin",
-    price: "$30.00",
+    price: "$25.00",
     image: "images/pompompurin.png",
     description: "This is a plushie item. Greetings.",
     category: "plushies"
   },
   {
     title: "Potato",
-    price: "$30.00",
+    price: "$10.00",
     image: "images/potato.png",
-    description: "This is a plushie item. Write your description here.",
+    description: "9cm x 12cm",
+    category: "plushies"
+  },
+   {
+    title: "Seal Keychain",
+    price: "$5.00",
+    image: "images/seal-keychain.png",
+    description: "5cm x 5cm (without chain)",
     category: "plushies"
   },
    {
     title: "Strawberry Turtle",
-    price: "$25.00",
+    price: "$40.00",
     image: "images/strawberry-turtle1.png",
-    description: "This is a plushie item. Write your description here.",
+    description: "27cm x 23cm",
     category: "plushies"
   },
    {
     title: "Totoro",
-    price: "$25.00",
+    price: "$55.00",
     image: "images/totoro1.png",
-    description: "This is a plushie item. Write your description here.",
+    description: "33cm x 24cm (36cm if you include length of tail)",
     category: "plushies"
   },
   {
     title: "White Cat Scrunchie",
     price: "$10.00",
     image: "images/white-cat-scrunchie.png",
-    description: "This is a scrunchie item. Write your description here.",
+    description: "Can be used as a hair tie or wrist accessory",
     category: "scrunchies"
   },
   {
