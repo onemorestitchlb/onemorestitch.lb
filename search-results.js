@@ -74,7 +74,7 @@ const ALL_PRODUCTS = [
     title: "Pompompurin",
     price: "$25.00",
     image: "images/pompompurin.png",
-    description: "This is a plushie item. Greetings.",
+    description: "21cm x 19cm",
     category: "plushies"
   },
   {
@@ -102,7 +102,7 @@ const ALL_PRODUCTS = [
     title: "Totoro",
     price: "$55.00",
     image: "images/totoro1.png",
-    description: "33cm x 24cm (36cm if you include length of tail)",
+    description: "33cm x 24cm",
     category: "plushies"
   },
   {
@@ -116,7 +116,7 @@ const ALL_PRODUCTS = [
     title: "Winnie The Pooh",
     price: "$25.00",
     image: "images/winniethepooh.png",
-    description: "This is a plushie item. Greetings.",
+    description: "18cm x 24cm",
     category: "plushies"
   },
 ];
