@@ -11,7 +11,7 @@ body{
     background-color:#001328;
     background-image: url("flower-top-right.png"), url("flower-bottom-left.png");
     background-repeat: no-repeat, no-repeat;
-    background-position: top right, bottom left;
+    background-position: top left, bottom right;
     background-size: 290px auto, 290px auto;
     background-attachment: fixed, fixed;
     color:#f9f3da;
