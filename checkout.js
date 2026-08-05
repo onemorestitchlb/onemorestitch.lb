@@ -84,7 +84,7 @@ const sendOrderEmail = (summaryText) => {
   const renderCheckout = () => {
     const cart = loadCart();
     const subtotal = cart.reduce((sum, item) => sum + parsePrice(item.price) * item.quantity, 0);
-    const deliveryFee = 4; // Editable delivery fee; change here later if needed
+    const deliveryFee = 5; // Editable delivery fee; change here later if needed
     const total = subtotal + deliveryFee;
 
     if (!checkoutItems) {
