@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let activeModalImages = [];
   let activeModalIndex = 0;
   let modalGalleryState = null;
+  let currentRequired = { option: false, color: false };
+  let selectedParts = { option: null, color: null };
 
   const parseImages = (value) => {
     const raw = String(value || "").trim();
@@ -216,6 +218,100 @@ document.addEventListener("DOMContentLoaded", () => {
     return optionPicker;
   };
 
+  const setVariationPart = (key, value) => {
+    if (!addToCartButton) return;
+    const existing = addToCartButton.dataset.selection || "";
+    const parts = existing.split(";").map((p) => p.trim()).filter(Boolean);
+    const filtered = parts.filter((p) => !p.toLowerCase().startsWith((key + ":").toLowerCase()));
+    if (value) filtered.push(`${key}: ${value}`);
+    const out = filtered.join('; ');
+    addToCartButton.dataset.selection = out;
+  };
+
+  const updateAddToCartState = () => {
+    if (!addToCartButton) return;
+    const needOption = currentRequired.option && !selectedParts.option;
+    const needColor = currentRequired.color && !selectedParts.color;
+    if (needOption || needColor) {
+      addToCartButton.disabled = true;
+      addToCartButton.classList.add('disabled');
+    } else {
+      addToCartButton.disabled = false;
+      addToCartButton.classList.remove('disabled');
+    }
+  };
+
+  /* Color picker: optional selector that can also swap images */
+  const createColorPicker = () => {
+    let picker = optionPicker && optionPicker.querySelector('.color-option-picker');
+    if (picker) return picker;
+    // create a dedicated color picker inside the optionPicker container (shared)
+    const container = createOptionPicker();
+    picker = document.createElement('div');
+    picker.className = 'color-option-picker';
+    picker.innerHTML = `
+      <div class="product-option-label"><span class="product-option-label-text color-label"></span> <span class="product-option-trigger color-trigger" tabindex="0" role="button"><span class="option-display">${activeOptionPlaceholder}</span></span></div>
+      <div class="product-option-menu color-menu hidden"></div>
+    `;
+    container.appendChild(picker);
+
+    const trigger = picker.querySelector('.color-trigger');
+    const menu = picker.querySelector('.color-menu');
+    trigger.addEventListener('click', () => menu.classList.toggle('hidden'));
+    trigger.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); menu.classList.toggle('hidden'); } });
+    return picker;
+  };
+
+  const parseLabelSrcPairs = (value) => {
+    return String(value || "").split('|').map((item) => item.trim()).filter(Boolean).map((entry) => {
+      const idx = entry.indexOf(':');
+      if (idx === -1) return { label: entry, src: '' };
+      const label = entry.slice(0, idx).trim();
+      const src = entry.slice(idx + 1).trim();
+      return { label, src };
+    });
+  };
+
+  const updateColorPicker = (choices, labelText) => {
+    if (!choices || !choices.length) return;
+    const picker = createColorPicker();
+    const display = picker.querySelector('.option-display');
+    const label = picker.querySelector('.color-label');
+    const menu = picker.querySelector('.color-menu');
+    if (label) label.textContent = labelText || 'Color';
+    if (display) display.textContent = activeOptionPlaceholder;
+    menu.innerHTML = '';
+    choices.forEach(({ label: choiceLabel, src }) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'product-option-choice color-choice';
+      btn.dataset.value = choiceLabel;
+      btn.dataset.src = src;
+      btn.textContent = choiceLabel;
+      btn.addEventListener('click', () => {
+        if (!display) return;
+        display.textContent = choiceLabel;
+        setVariationPart(labelText || 'Color', choiceLabel);
+        selectedParts.color = choiceLabel;
+        if (src) {
+          if (modalGalleryState) {
+            modalGalleryState.destroy();
+            modalGalleryState = { setActiveIndex: () => {}, destroy: () => {} };
+          }
+          if (galleryWrapper) {
+            galleryWrapper.querySelectorAll('.gallery-controls').forEach((c) => c.remove());
+          }
+          detailImage.src = src;
+          activeModalImages = [src];
+          activeModalIndex = 0;
+        }
+        updateAddToCartState();
+        menu.classList.add('hidden');
+      });
+      menu.appendChild(btn);
+    });
+  };
+
   const updateOptionPicker = (options, labelText) => {
     if (!options || !options.length) {
       return;
@@ -241,14 +337,12 @@ document.addEventListener("DOMContentLoaded", () => {
       optionButton.dataset.value = optionValue;
       optionButton.textContent = optionValue;
       optionButton.addEventListener("click", () => {
-        if (!display || !addToCartButton) {
-          return;
-        }
+        if (!display) return;
         display.textContent = optionValue;
-        addToCartButton.dataset.selection = optionValue;
-        addToCartButton.disabled = false;
-        addToCartButton.classList.remove("disabled");
-        menu.classList.add("hidden");
+        setVariationPart(labelText || 'Option', optionValue);
+        selectedParts.option = optionValue;
+        updateAddToCartState();
+        menu.classList.add('hidden');
       });
       menu.appendChild(optionButton);
     });
@@ -301,16 +395,30 @@ document.addEventListener("DOMContentLoaded", () => {
       .filter(Boolean);
 
     activeOptionPlaceholder = optionPlaceholder;
+    const colorSource = card.dataset.colorChoices || card.closest(".product-card")?.dataset.colorChoices || "";
+    const colorLabel = card.dataset.colorLabel || card.closest(".product-card")?.dataset.colorLabel || "Color";
+    const colorChoices = parseLabelSrcPairs(colorSource);
+
+    currentRequired.option = optionChoices.length > 0;
+    currentRequired.color = colorChoices.length > 0;
+    selectedParts.option = null;
+    selectedParts.color = null;
+    updateAddToCartState();
+
     if (optionChoices.length) {
       updateOptionPicker(optionChoices, optionLabel);
-      if (optionPicker) {
-        optionPicker.classList.remove("hidden");
-      }
       resetOptionSelection();
-    } else {
-      if (optionPicker) {
-        optionPicker.classList.add("hidden");
-      }
+    }
+
+    if (colorChoices.length) {
+      updateColorPicker(colorChoices, colorLabel);
+    }
+
+    // show/hide the picker container based on available pickers
+    if ((optionChoices.length || colorChoices.length) && optionPicker) {
+      optionPicker.classList.remove('hidden');
+    } else if (optionPicker) {
+      optionPicker.classList.add('hidden');
       if (addToCartButton) {
         addToCartButton.dataset.selection = "";
         addToCartButton.disabled = false;
