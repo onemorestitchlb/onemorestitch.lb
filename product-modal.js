@@ -357,11 +357,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const display = optionPicker.querySelector(".option-display");
-    if (display) {
+    optionPicker.querySelectorAll(".option-display").forEach((display) => {
       display.textContent = activeOptionPlaceholder;
-    }
+    });
 
+    selectedParts.option = null;
+    selectedParts.color = null;
     if (addToCartButton) {
       addToCartButton.dataset.selection = "";
       addToCartButton.disabled = true;
