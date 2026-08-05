@@ -69,11 +69,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     saveCart(cart);
     showNotification(`${title} added to cart`);
-        const priceElem = modal.querySelector(".detail-price");
-        if (titleElem && priceElem) {
-          addToCart(titleElem.textContent, priceElem.textContent, btn.dataset.selection || "");
-        }
+  };
+
+  addToCartButtons.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      const button = event.currentTarget;
+      const modal = button.closest(".modal");
+      const titleElem = modal?.querySelector(".detail-name");
+      const priceElem = modal?.querySelector(".detail-price");
+      if (!titleElem || !priceElem) {
+        return;
       }
+      addToCart(titleElem.textContent, priceElem.textContent, button.dataset.selection || "");
     });
   });
 
