@@ -53,7 +53,7 @@ const ALL_PRODUCTS = [
     title: "Mini Red Panda",
     price: "$20.00",
     image: "images/red-panda1.png",
-    description: "9cm x 13cm",
+    description: "9.5cm x 13cm",
     category: "plushies"
   },
   {
