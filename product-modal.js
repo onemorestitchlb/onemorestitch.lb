@@ -218,14 +218,18 @@ document.addEventListener("DOMContentLoaded", () => {
     return optionPicker;
   };
 
+  const updateVariationString = () => {
+    if (!addToCartButton) return;
+    const values = [];
+    if (selectedParts.option) values.push(selectedParts.option);
+    if (selectedParts.color) values.push(selectedParts.color);
+    addToCartButton.dataset.selection = values.join('; ');
+  };
+
   const setVariationPart = (key, value) => {
     if (!addToCartButton) return;
-    const existing = addToCartButton.dataset.selection || "";
-    const parts = existing.split(";").map((p) => p.trim()).filter(Boolean);
-    const filtered = parts.filter((p) => !p.toLowerCase().startsWith((key + ":").toLowerCase()));
-    if (value) filtered.push(`${key}: ${value}`);
-    const out = filtered.join('; ');
-    addToCartButton.dataset.selection = out;
+    selectedParts[key] = value || null;
+    updateVariationString();
   };
 
   const updateAddToCartState = () => {
@@ -291,7 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.addEventListener('click', () => {
         if (!display) return;
         display.textContent = choiceLabel;
-        setVariationPart(labelText || 'Color', choiceLabel);
+        setVariationPart('color', choiceLabel);
         selectedParts.color = choiceLabel;
         if (src) {
           if (modalGalleryState) {
@@ -339,7 +343,7 @@ document.addEventListener("DOMContentLoaded", () => {
       optionButton.addEventListener("click", () => {
         if (!display) return;
         display.textContent = optionValue;
-        setVariationPart(labelText || 'Option', optionValue);
+        setVariationPart('option', optionValue);
         selectedParts.option = optionValue;
         updateAddToCartState();
         menu.classList.add('hidden');

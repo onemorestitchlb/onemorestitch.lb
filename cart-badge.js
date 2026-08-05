@@ -68,18 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cart.push({ title: itemTitle, price: normalizedPrice, quantity: 1, variation });
     }
     saveCart(cart);
-    showNotification(`${itemTitle} added to cart`);
-  };
-
-  addToCartButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (btn.disabled) {
-        return;
-      }
-
-      const modal = btn.closest(".modal");
-      if (modal) {
-        const titleElem = modal.querySelector(".detail-name");
+    showNotification(`${title} added to cart`);
         const priceElem = modal.querySelector(".detail-price");
         if (titleElem && priceElem) {
           addToCart(titleElem.textContent, priceElem.textContent, btn.dataset.selection || "");

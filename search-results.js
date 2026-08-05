@@ -50,6 +50,13 @@ const ALL_PRODUCTS = [
     category: "plushies"
   },
   {
+    title: "Mini Red Panda",
+    price: "$20.00",
+    image: "images/red-panda1.png",
+    description: "9cm x 13cm",
+    category: "plushies"
+  },
+  {
     title: "Mini Seated Bunny",
     price: "$15.00",
     image: "images/mini-bunny.png",
@@ -101,8 +108,8 @@ const ALL_PRODUCTS = [
    {
     title: "Seal Keychain",
     price: "$5.00",
-    image: "images/seal-keychain.png",
-    description: "5cm x 5cm (without chain)",
+    image: "images/seals.png",
+    description: "5cm x 5cm (excluding chain)",
     category: "plushies"
   },
    {
@@ -115,7 +122,7 @@ const ALL_PRODUCTS = [
    {
     title: "Totoro",
     price: "$55.00",
-    image: "images/totoro1.png",
+    image: "images/totoro2.png",
     description: "33cm x 24cm",
     category: "plushies"
   },
