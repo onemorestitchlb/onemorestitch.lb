@@ -35,8 +35,22 @@ const ALL_PRODUCTS = [
     description: "28cm x 23cm",
     category: "plushies"
   },
-   {
-    title: "Mini Bunny",
+  {
+    title: "Mini Otter",
+    price: "$15.00",
+    image: "images/mini-otter.png",
+    description: "8cm x 13cm",
+    category: "plushies"
+  },
+  {
+    title: "Mini Penguin",
+    price: "$15.00",
+    image: "images/mini-penguin.png",
+    description: "8cm x 11cm",
+    category: "plushies"
+  },
+  {
+    title: "Mini Seated Bunny",
     price: "$15.00",
     image: "images/mini-bunny.png",
     description: "9cm x 13cm",

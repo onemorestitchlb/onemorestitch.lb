@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     inquireButton.dataset.instagramUrl = instagramUrl;
   }
 
-  let keychainPicker = null;
+  let optionPicker = null;
+  let activeOptionPlaceholder = "Select..";
   let activeModalImages = [];
   let activeModalIndex = 0;
   let modalGalleryState = null;
@@ -179,23 +180,20 @@ document.addEventListener("DOMContentLoaded", () => {
     return modalGalleryState;
   };
 
-  const createKeychainPicker = () => {
-    if (keychainPicker) {
-      return keychainPicker;
+  const createOptionPicker = () => {
+    if (optionPicker) {
+      return optionPicker;
     }
 
-    keychainPicker = document.createElement("div");
-    keychainPicker.className = "keychain-option-picker hidden";
-    keychainPicker.innerHTML = `
-      <div class="keychain-option-label">Do you want it with a <span class="keychain-select-trigger" tabindex="0" role="button"><span class="option-display">Select..</span></span></div>
-      <div class="keychain-option-menu hidden">
-        <button type="button" class="keychain-option" data-value="Chain (regular)">Chain (regular)</button>
-        <button type="button" class="keychain-option" data-value="Strap (to hang in car, etc)">Strap (to hang in car, etc)</button>
-      </div>
+    optionPicker = document.createElement("div");
+    optionPicker.className = "product-option-picker hidden";
+    optionPicker.innerHTML = `
+      <div class="product-option-label"><span class="product-option-label-text"></span> <span class="product-option-trigger" tabindex="0" role="button"><span class="option-display">${activeOptionPlaceholder}</span></span></div>
+      <div class="product-option-menu hidden"></div>
     `;
 
-    const trigger = keychainPicker.querySelector(".keychain-select-trigger");
-    const menu = keychainPicker.querySelector(".keychain-option-menu");
+    const trigger = optionPicker.querySelector(".product-option-trigger");
+    const menu = optionPicker.querySelector(".product-option-menu");
 
     trigger.addEventListener("click", () => {
       menu.classList.toggle("hidden");
@@ -208,36 +206,62 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    keychainPicker.querySelectorAll(".keychain-option").forEach((option) => {
-      option.addEventListener("click", () => {
-        const selected = option.dataset.value;
-        const display = keychainPicker.querySelector(".option-display");
-        display.textContent = selected;
-        addToCartButton.dataset.selection = selected;
-        addToCartButton.disabled = false;
-        addToCartButton.classList.remove("disabled");
-        menu.classList.add("hidden");
-      });
-    });
-
     document.addEventListener("click", (event) => {
-      if (!keychainPicker.contains(event.target)) {
+      if (optionPicker && !optionPicker.contains(event.target)) {
         menu.classList.add("hidden");
       }
     });
 
-    modalContent.insertBefore(keychainPicker, buttonRow);
-    return keychainPicker;
+    modalContent.insertBefore(optionPicker, buttonRow);
+    return optionPicker;
   };
 
-  const resetKeychainSelection = () => {
-    if (!keychainPicker) {
+  const updateOptionPicker = (options, labelText) => {
+    if (!options || !options.length) {
       return;
     }
 
-    const display = keychainPicker.querySelector(".option-display");
+    const picker = createOptionPicker();
+    const display = picker.querySelector(".option-display");
+    const label = picker.querySelector(".product-option-label-text");
+    const menu = picker.querySelector(".product-option-menu");
+
+    if (label) {
+      label.textContent = labelText || "I would like it with a";
+    }
     if (display) {
-      display.textContent = "Select below..";
+      display.textContent = activeOptionPlaceholder;
+    }
+
+    menu.innerHTML = "";
+    options.forEach((optionValue) => {
+      const optionButton = document.createElement("button");
+      optionButton.type = "button";
+      optionButton.className = "product-option-choice";
+      optionButton.dataset.value = optionValue;
+      optionButton.textContent = optionValue;
+      optionButton.addEventListener("click", () => {
+        if (!display || !addToCartButton) {
+          return;
+        }
+        display.textContent = optionValue;
+        addToCartButton.dataset.selection = optionValue;
+        addToCartButton.disabled = false;
+        addToCartButton.classList.remove("disabled");
+        menu.classList.add("hidden");
+      });
+      menu.appendChild(optionButton);
+    });
+  };
+
+  const resetOptionSelection = () => {
+    if (!optionPicker) {
+      return;
+    }
+
+    const display = optionPicker.querySelector(".option-display");
+    if (display) {
+      display.textContent = activeOptionPlaceholder;
     }
 
     if (addToCartButton) {
@@ -268,23 +292,30 @@ document.addEventListener("DOMContentLoaded", () => {
       instagramButton.classList.add("hidden");
     }
 
-    const titleText = (title || "").toLowerCase();
-    const isKeychain = titleText.includes("keychain");
+    const optionSource = card.dataset.options || card.closest(".product-card")?.dataset.options || "";
+    const optionLabel = card.dataset.optionLabel || card.closest(".product-card")?.dataset.optionLabel || "I would like it with a";
+    const optionPlaceholder = card.dataset.optionPlaceholder || "Select..";
+    const optionChoices = String(optionSource)
+      .split("|")
+      .map((item) => item.trim())
+      .filter(Boolean);
 
-    if (isKeychain) {
-      createKeychainPicker();
-      keychainPicker.classList.remove("hidden");
-      resetKeychainSelection();
-    } else {
-      if (keychainPicker) {
-        keychainPicker.classList.add("hidden");
+    activeOptionPlaceholder = optionPlaceholder;
+    if (optionChoices.length) {
+      updateOptionPicker(optionChoices, optionLabel);
+      if (optionPicker) {
+        optionPicker.classList.remove("hidden");
       }
-    }
-
-    if (addToCartButton) {
-      addToCartButton.dataset.selection = "";
-      addToCartButton.disabled = false;
-      addToCartButton.classList.remove("disabled");
+      resetOptionSelection();
+    } else {
+      if (optionPicker) {
+        optionPicker.classList.add("hidden");
+      }
+      if (addToCartButton) {
+        addToCartButton.dataset.selection = "";
+        addToCartButton.disabled = false;
+        addToCartButton.classList.remove("disabled");
+      }
     }
 
     createModalGallery(images.length ? images : [card.querySelector("img")?.getAttribute("src") || ""], title);

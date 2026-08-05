@@ -775,19 +775,66 @@ cart.html .site-header {
     margin: 0 0 8px;
 }
 
-.keychain-option-picker {
+.keychain-option-picker,
+.product-option-picker {
     margin-bottom: 12px;
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.keychain-option-label {
+.keychain-option-label,
+.product-option-label {
     font-size: 15px;
     text-align: left;
 }
 
-.keychain-select-trigger {
+.keychain-select-trigger,
+.product-option-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 220px;
+    padding: 10px 12px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: #f9f3da;
+    color: #4d4d4d;
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+.keychain-option-menu,
+.product-option-menu {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f9f3da;
+}
+
+.keychain-option,
+.product-option-choice {
+    border: none;
+    background: #f9f3da;
+    text-align: left;
+    padding: 10px 12px;
+    cursor: pointer;
+    font: inherit;
+    color: black;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.keychain-option + .keychain-option,
+.product-option-choice + .product-option-choice {
+    border-top: 1px solid black;
+}
+
+.keychain-option:hover,
+.product-option-choice:hover {
+    background: #d9d9d9;
+    color: #001328;
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
