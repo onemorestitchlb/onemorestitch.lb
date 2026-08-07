@@ -2,9 +2,16 @@
 const ALL_PRODUCTS = [
   {
     title: "Baby Bear",
-    price: "$20.00",
-    image: "images/baby-bear.png",
-    description: "15cm x 23cm",
+    price: "$15.00",
+    image: "images/mini-bear.png",
+    description: "14cm x 18cm",
+    category: "plushies"
+  },
+  {
+    title: "Beaver",
+    price: "$35.00",
+    image: "images/beaver1.png",
+    description: "28cm x 40cm",
     category: "plushies"
   },
   {
@@ -15,10 +22,10 @@ const ALL_PRODUCTS = [
     category: "plushies"
   },
   {
-    title: "Beaver",
-    price: "$35.00",
-    image: "images/beaver1.png",
-    description: "28cm x 40cm",
+    title: "Bearnigiri (Bear + Onigiri)",
+    price: "$25.00",
+    image: "images/bear-onigiri1.png",
+    description: "20cm x 20cm",
     category: "plushies"
   },
   {
@@ -36,17 +43,80 @@ const ALL_PRODUCTS = [
     category: "plushies"
   },
   {
-    title: "Mini Otter",
+    title: "Brontosaurus",
     price: "$15.00",
+    image: "images/brontosaurus1.png",
+    description: "14cm x 19cm",
+    category: "plushies"
+  },
+  {
+    title: "Chocolate Milk Carton",
+    price: "$17.00",
+    image: "images/chocomilk.png",
+    description: "20cm x 19cm",
+    category: "plushies"
+  },
+  {
+    title: "Cow",
+    price: "$20.00",
+    image: "images/cow1.png",
+    description: "24cm x 30cm",
+    category: "plushies"
+  },
+  {
+    title: "DNA",
+    price: "$15.00",
+    image: "images/dna1.png",
+    description: "10cm x 24cm",
+    category: "plushies"
+  },
+  {
+    title: "Fat Duck",
+    price: "$35.00",
+    image: "images/fat-duck.png",
+    description: "32cm x 25cm",
+    category: "plushies"
+  },
+  {
+    title: "Fat Panda",
+    price: "$40.00",
+    image: "images/panda1.png",
+    description: "23cm x 27cm",
+    category: "plushies"
+  },
+  {
+    title: "Ketchup'd Nugget",
+    price: "$20.00",
+    image: "images/distinguished-potato.png",
+    description: "23cm x 22cm",
+    category: "plushies"
+  },
+   {
+    title: "Mini Bearcake (Bear + Pancake)",
+    price: "$12.00",
+    image: "images/mini-bearcake.png",
+    description: "9cm x 8cm",
+    category: "plushies"
+  },
+  {
+    title: "Mini Otter",
+    price: "$12.00",
     image: "images/mini-otter.png",
     description: "8cm x 13cm",
     category: "plushies"
   },
   {
     title: "Mini Penguin",
-    price: "$15.00",
+    price: "$12.00",
     image: "images/mini-penguin.png",
     description: "8cm x 11cm",
+    category: "plushies"
+  },
+  {
+    title: "Mini Potato",
+    price: "$10.00",
+    image: "images/potato.png",
+    description: "9cm x 12cm",
     category: "plushies"
   },
   {
@@ -60,6 +130,13 @@ const ALL_PRODUCTS = [
     title: "Mini Seated Bunny",
     price: "$15.00",
     image: "images/mini-bunny.png",
+    description: "9cm x 13cm",
+    category: "plushies"
+  },
+  {
+    title: "Mini Turtle",
+    price: "$15.00",
+    image: "images/mini-turtle.png",
     description: "9cm x 13cm",
     category: "plushies"
   },
@@ -99,20 +176,34 @@ const ALL_PRODUCTS = [
     category: "plushies"
   },
   {
-    title: "Potato",
-    price: "$10.00",
-    image: "images/potato.png",
-    description: "9cm x 12cm",
-    category: "plushies"
-  },
-   {
     title: "Seal Keychain",
     price: "$5.00",
     image: "images/seals.png",
     description: "5cm x 5cm (excluding chain)",
     category: "plushies"
   },
-   {
+  {
+    title: "Radish Pig Wearing Chick",
+    price: "$25.00",
+    image: "images/radish-pig-wearing-chick.png",
+    description: "23cm x 31cm",
+    category: "plushies"
+  },
+  {
+    title: "Stegosaurus",
+    price: "$25.00",
+    image: "images/blue-steg1.png",
+    description: "32cm x 30cm",
+    category: "plushies"
+  },
+  {
+    title: "Strawberry Milk Carton",
+    price: "$17.00",
+    image: "images/strawberrymilk.png",
+    description: "20cm x 19cm",
+    category: "plushies"
+  },
+  {
     title: "Strawberry Turtle",
     price: "$40.00",
     image: "images/strawberry-turtle1.png",
@@ -123,7 +214,7 @@ const ALL_PRODUCTS = [
     title: "Totoro",
     price: "$55.00",
     image: "images/totoro2.png",
-    description: "33cm x 24cm",
+    description: "33cm x 36cm",
     category: "plushies"
   },
   {
