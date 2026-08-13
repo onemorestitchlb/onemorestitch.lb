@@ -214,6 +214,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    // Hide the top option label by default; it will be shown only when actual options exist.
+    const topLabel = optionPicker.querySelector('.product-option-label');
+    if (topLabel) topLabel.style.display = 'none';
+    const topMenu = optionPicker.querySelector('.product-option-menu');
+    if (topMenu) topMenu.style.display = 'none';
+
     modalContent.insertBefore(optionPicker, buttonRow);
     return optionPicker;
   };
@@ -324,10 +330,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const picker = createOptionPicker();
     const display = picker.querySelector(".option-display");
     const label = picker.querySelector(".product-option-label-text");
+    const topLabel = picker.querySelector('.product-option-label');
     const menu = picker.querySelector(".product-option-menu");
 
     if (label) {
       label.textContent = labelText || "I would like it with a";
+      // Ensure the top option label is visible when actual options exist
+      if (topLabel) topLabel.style.display = '';
+      if (menu) menu.style.display = '';
     }
     if (display) {
       display.textContent = activeOptionPlaceholder;
