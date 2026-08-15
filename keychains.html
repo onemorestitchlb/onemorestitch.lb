@@ -21,16 +21,19 @@
 <body>
 
 <div class="site-header">
-    <div class="search-box" id="searchBox">
-        <input type="text" class="search-input" id="searchInput" placeholder="What are you looking for?" aria-label="Search products">
-        <span class="search-hint" id="searchHint">What are you looking for?</span>
-        <div class="search-results" id="searchResults"></div>
-    </div>
-    <button class="search-toggle" id="searchToggle" type="button"><img src="search.png" alt="search"></button>
+    <button class="home-button" id="homeButton" type="button" aria-label="Back to homepage"><span aria-hidden="true">&lt;</span></button>
+    <div class="header-actions">
+        <div class="search-box" id="searchBox">
+            <input type="text" class="search-input" id="searchInput" placeholder="What are you looking for?" aria-label="Search products">
+            <span class="search-hint" id="searchHint">What are you looking for?</span>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+        <button class="search-toggle" id="searchToggle" type="button"><img src="search.png" alt="search"></button>
         <a href="cart.html" class="cart-button" id="cartButton" aria-label="Cart">
             <img src="cart-removebg-preview.png" alt="cart">
             <span class="cart-badge hidden" id="cartBadge">0</span>
         </a>
+    </div>
 </div>
 
 <div class="container">

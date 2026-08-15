@@ -1,5 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".site-header");
+  const homeButton = document.getElementById("homeButton");
+
+  if (homeButton) {
+    homeButton.addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  }
+
+  if (header && !header.querySelector(".home-button")) {
+    const homeButtonNode = document.createElement("button");
+    homeButtonNode.type = "button";
+    homeButtonNode.className = "home-button";
+    homeButtonNode.id = "homeButton";
+    homeButtonNode.setAttribute("aria-label", "Back to homepage");
+    homeButtonNode.innerHTML = "<span aria-hidden=\"true\">&lt;</span>";
+    homeButtonNode.addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+    header.insertBefore(homeButtonNode, header.firstChild);
+  }
+
   const searchToggle = document.getElementById("searchToggle");
   const searchBox = document.getElementById("searchBox");
   const searchInput = document.getElementById("searchInput");
@@ -7,6 +28,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!header || !searchToggle || !searchBox || !searchInput) {
     return;
+  }
+
+  const headerActions = header.querySelector(".header-actions");
+  if (!headerActions) {
+    const actions = document.createElement("div");
+    actions.className = "header-actions";
+    const searchToggleNode = header.querySelector("#searchToggle");
+    const cartButtonNode = header.querySelector("#cartButton");
+
+    if (searchToggleNode) {
+      actions.appendChild(searchToggleNode);
+    }
+    if (cartButtonNode) {
+      actions.appendChild(cartButtonNode);
+    }
+    header.appendChild(actions);
   }
 
   searchToggle.addEventListener("click", () => {

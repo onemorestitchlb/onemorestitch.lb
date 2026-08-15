@@ -39,11 +39,46 @@ body.modal-open {
 .site-header {
     position: fixed;
     top: 20px;
+    left: 20px;
     right: 20px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
-    z-index: 1100;
+    z-index: 900;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.home-button,
+.search-toggle,
+.cart-button {
+    border: 2px solid black;
+    background: #f9f3da;
+    color: black;
+    border-radius: 999px;
+    padding: 8px 12px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.home-button {
+    width: 48px;
+    height: 48px;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 700;
+    padding: 0;
 }
 
 .search-box {
@@ -73,20 +108,10 @@ body.modal-open {
 
 .search-toggle,
 .cart-button {
-    border: 2px solid black;
-    background: #f9f3da;
-    color: black;
-    border-radius: 999px;
-    padding: 8px 12px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     font-size: 20px;
-    position: relative;
 }
 
+.home-button:hover,
 .search-toggle:hover,
 .cart-button:hover {
     background: black;
