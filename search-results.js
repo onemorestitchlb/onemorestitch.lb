@@ -50,6 +50,13 @@ const ALL_PRODUCTS = [
     category: "plushies"
   },
   {
+    title: "Chick Keychain",
+    price: "$5.00",
+    image: "images/chick.png",
+    description: "8.5cm x 6cm",
+    category: "keychains"
+  },
+  {
     title: "Chocolate Milk Carton",
     price: "$17.00",
     image: "images/chocomilk.png",
@@ -82,6 +89,20 @@ const ALL_PRODUCTS = [
     price: "$40.00",
     image: "images/panda1.png",
     description: "23cm x 27cm",
+    category: "plushies"
+  },
+  {
+    title: "Hello Kitty Keychain",
+    price: "$7.00",
+    image: "images/hellokitty.png",
+    description: "7.5cm x 6.5cm",
+    category: "keychains"
+  },
+  {
+    title: "Mini Hello Kitty Wearing Spiderman",
+    price: "$35.00",
+    image: "images/spiderkitty.png",
+    description: "8cm x 14cm",
     category: "plushies"
   },
   {
@@ -133,6 +154,13 @@ const ALL_PRODUCTS = [
     description: "9cm x 13cm",
     category: "plushies"
   },
+    {
+    title: "Mini Spiderman Wearing Hello Kitty",
+    price: "$35.00",
+    image: "images/kittyspider.png",
+    description: "8cm x 14cm",
+    category: "plushies"
+  },
   {
     title: "Mini Turtle",
     price: "$15.00",
@@ -177,16 +205,30 @@ const ALL_PRODUCTS = [
   },
   {
     title: "Seal Keychain",
-    price: "$5.00",
+    price: "$6.00",
     image: "images/seals.png",
     description: "5cm x 5cm (excluding chain)",
     category: "plushies"
+  },
+    {
+    title: "Spiderman Keychain",
+    price: "$15.00",
+    image: "images/spidermankeychains.png",
+    description: "4.5cm x 6.5cm",
+    category: "keychains"
   },
   {
     title: "Radish Pig Wearing Chick",
     price: "$25.00",
     image: "images/radish-pig-wearing-chick.png",
     description: "23cm x 31cm",
+    category: "plushies"
+  },
+  {
+    title: "Spiderkitty (Spiderman + Hello Kitty) Bundle",
+    price: "$65.00",
+    image: "images/both.png",
+    description: "8cm x 14cm",
     category: "plushies"
   },
   {
@@ -216,6 +258,13 @@ const ALL_PRODUCTS = [
     image: "images/totoro2.png",
     description: "33cm x 36cm",
     category: "plushies"
+  },
+    {
+    title: "Whale Keychain",
+    price: "$5.00",
+    image: "images/whales.png",
+    description: "7cm x 5.5cm",
+    category: "keychains"
   },
   {
     title: "White Cat Scrunchie",

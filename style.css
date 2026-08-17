@@ -916,6 +916,32 @@ cart.html .site-header {
     opacity: 0.65;
     cursor: not-allowed;
 }
+/* bundles */
+.old-price {
+    position: relative;
+    color: black;
+    margin-right: 8px;
+}
+
+.old-price::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    background: red;
+}
+
+/* When the product card is hovered */
+.product-card:hover .old-price {
+    color: white;
+}
+
+.new-price {
+    color: red;
+    font-weight: bold;
+}
 
 /* ========================== */
 /* PROCEED TO CHECKOUT BUTTON */

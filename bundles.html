@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BUNDLES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="site-header">
+    <button class="home-button" id="homeButton" type="button" aria-label="Back to homepage"><span aria-hidden="true">&lt;</span></button>
+    <div class="header-actions">
+        <div class="search-box" id="searchBox">
+            <input type="text" class="search-input" id="searchInput" placeholder="What are you looking for?" aria-label="Search products">
+            <span class="search-hint" id="searchHint">What are you looking for?</span>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+        <button class="search-toggle" id="searchToggle" type="button"><img src="search.png" alt="search"></button>
+        <a href="cart.html" class="cart-button" id="cartButton" aria-label="Cart">
+            <img src="cart-removebg-preview.png" alt="cart">
+            <span class="cart-badge hidden" id="cartBadge">0</span>
+        </a>
+    </div>
+</div>
+
+<div class="container">
+    <h1>BUNDLES</h1>
+    <div class="product-grid">
+
+        <div class="product-card" data-title="Spiderkitty (Spiderman + Hello Kitty) Bundle" data-description="8cm x 14cm" data-link="plushies.html">
+            <div class="image-container" tabindex="0" role="button" aria-label="View details for Spiderkitty (Spiderman + Hello Kitty) Bundle" data-images="both.png,spiderkitty.png,kittyspider.png" data-title="Spiderkitty (Spiderman + Hello Kitty) Bundle" data-modal-images="horizontal-both.png,horizontal-spiderkitty.png,horizontal-kittyspider.png" data-price="$65.00" data-description="8cm x 14cm">
+                <img src="both.png" alt="Spiderkitty (Spiderman + Hello Kitty) Bundle">
+                <div class="overlay">View Details</div>
+            </div>
+            <h2>Spiderkitty (Spiderman + Hello Kitty) Bundle</h2>
+            <p class="price">
+                <span class="old-price">$70.00</span>
+                <span class="new-price"><br>$65.00</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
